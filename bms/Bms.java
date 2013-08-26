@@ -1,6 +1,7 @@
 package bms;
  
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -62,6 +63,9 @@ public class Bms {
 	public final static Block citrineOre =			new BlockBMSOre(2029, 9004, Material.rock, "citrineOre");
 	public final static Block jadeiteOre =			new BlockBMSOre(2030, 9005, Material.rock, "jadeiteOre");
 	
+	public final static Block blockTitanium =		new BlockOreStorage(2031).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockTitanium").func_111022_d("bms:blockTitanium");
+	public final static Block blockAdamantium =		new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockAdamantium").func_111022_d("bms:blockAdamantium");
+	
 	// Items
 	private static Item titaniumIngot =			new ItemBMSIngots(9000, "titaniumIngot");
 	private static Item adamantiumIngot =		new ItemBMSIngots(9001, "adamantiumIngot");
@@ -73,6 +77,7 @@ public class Bms {
 	private static Item sapphirePowder =		new Item(9007).setUnlocalizedName("sapphirePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:sapphirePowder");
 	private static Item citrinePowder =			new Item(9008).setUnlocalizedName("citrinePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:citrinePowder");
 	private static Item jadeitePowder =			new Item(9009).setUnlocalizedName("jadeitePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:jadeitePowder");
+	private static Item diamondPowder =			new Item(9010).setUnlocalizedName("diamondPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:diamondPowder");
  
     // The instance of your mod that Forge uses.
     @Instance("Bms")
@@ -154,6 +159,10 @@ public class Bms {
     		LanguageRegistry.addName(stainedGlassGrey, "Grey Stained Glass");
     	GameRegistry.registerBlock(stainedGlassLightGrey, "stainedGlassLightGrey");
     		LanguageRegistry.addName(stainedGlassLightGrey, "Light Grey Stained Glass");
+    	GameRegistry.registerBlock(blockTitanium, "blockTitanium");
+    		LanguageRegistry.addName(blockTitanium, "Block of Titanium");
+    	GameRegistry.registerBlock(blockAdamantium, "blockAdamantium");
+    		LanguageRegistry.addName(blockAdamantium, "Block of Adamantium");
     	// Stained Panes
     	GameRegistry.registerBlock(thinGlassRed, "thinGlassRed");
     		LanguageRegistry.addName(thinGlassRed, "Red Stained Glass Pane");
@@ -219,7 +228,9 @@ public class Bms {
         	LanguageRegistry.addName(citrinePowder, "Citrine Powder");
         GameRegistry.registerItem(jadeitePowder, "jadeitePowder");
         	LanguageRegistry.addName(jadeitePowder, "Jadeite Powder");
-        	
+        GameRegistry.registerItem(diamondPowder, "diamondPowder");
+        	LanguageRegistry.addName(diamondPowder, "Diamond Powder");
+
     	GameRegistry.registerWorldGenerator(new BMSOreWorldGenerator());
     }
    
