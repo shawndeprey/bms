@@ -2,13 +2,14 @@ package bms;
  
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOreStorage;
-import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -17,6 +18,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
  
@@ -78,6 +80,10 @@ public class Bms {
 	private static Item citrinePowder =			new Item(9008).setUnlocalizedName("citrinePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:citrinePowder");
 	private static Item jadeitePowder =			new Item(9009).setUnlocalizedName("jadeitePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:jadeitePowder");
 	private static Item diamondPowder =			new Item(9010).setUnlocalizedName("diamondPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:diamondPowder");
+	
+	//Projectile Weapons
+	public static Item slingshot = new ItemSlingshot(9021).setUnlocalizedName("slingshot").func_111206_d("bms:slingshot");
+	public static Item pebble =	new Item(9022).setUnlocalizedName("pebble").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:pebble");
  
     // The instance of your mod that Forge uses.
     @Instance("Bms")
@@ -230,6 +236,14 @@ public class Bms {
         	LanguageRegistry.addName(jadeitePowder, "Jadeite Powder");
         GameRegistry.registerItem(diamondPowder, "diamondPowder");
         	LanguageRegistry.addName(diamondPowder, "Diamond Powder");
+        // Projectile Weapons
+        GameRegistry.registerItem(slingshot, "slingshot");
+        	LanguageRegistry.addName(slingshot, "Slingshot");
+        GameRegistry.registerItem(pebble, "pebble");
+        	LanguageRegistry.addName(pebble, "Pebble");
+        	
+        EntityRegistry.registerModEntity(EntityPebble.class, "Entity Pebble", ModLoader.getUniqueEntityId(), this, 128, 1, true);
+        RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderSnowball(pebble));
 
     	GameRegistry.registerWorldGenerator(new BMSOreWorldGenerator());
     }
