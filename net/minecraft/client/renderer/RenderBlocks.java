@@ -3484,76 +3484,13 @@ public class RenderBlocks
         
         // UV values
         double u0 = (double)icon.getMinU();
-        double u1 = (double)icon.getInterpolatedU(1.0D);
-        double u2 = (double)icon.getInterpolatedU(2.0D);
-        double u3 = (double)icon.getInterpolatedU(3.0D);
-        double u4 = (double)icon.getInterpolatedU(4.0D);
-        double u5 = (double)icon.getInterpolatedU(5.0D);
-        double u6 = (double)icon.getInterpolatedU(6.0D);
         double u7 = (double)icon.getInterpolatedU(7.0D);
         double u8 = (double)icon.getInterpolatedU(8.0D);
         double u9 = (double)icon.getInterpolatedU(9.0D);
-        double u10 = (double)icon.getInterpolatedU(10.0D);
-        double u11 = (double)icon.getInterpolatedU(11.0D);
-        double u12 = (double)icon.getInterpolatedU(12.0D);
-        double u13 = (double)icon.getInterpolatedU(13.0D);
-        double u14 = (double)icon.getInterpolatedU(14.0D);
-        double u15 = (double)icon.getInterpolatedU(15.0D);
         double u16 = (double)icon.getMaxU();
         
         double v0 = (double)icon.getMinV();
-        double v1 = (double)icon.getInterpolatedV(1.0D);
-        double v2 = (double)icon.getInterpolatedV(2.0D);
-        double v3 = (double)icon.getInterpolatedV(3.0D);
-        double v4 = (double)icon.getInterpolatedV(4.0D);
-        double v5 = (double)icon.getInterpolatedV(5.0D);
-        double v6 = (double)icon.getInterpolatedV(6.0D);
-        double v7 = (double)icon.getInterpolatedV(7.0D);
-        double v8 = (double)icon.getInterpolatedV(8.0D);
-        double v9 = (double)icon.getInterpolatedV(9.0D);
-        double v10 = (double)icon.getInterpolatedV(10.0D);
-        double v11 = (double)icon.getInterpolatedV(11.0D);
-        double v12 = (double)icon.getInterpolatedV(12.0D);
-        double v13 = (double)icon.getInterpolatedV(13.0D);
-        double v14 = (double)icon.getInterpolatedV(14.0D);
-        double v15 = (double)icon.getInterpolatedV(15.0D);
         double v16 = (double)icon.getMaxV();
-        
-        double u_0 = (double)icon1.getMinU();
-        double u_1 = (double)icon1.getInterpolatedU(1.0D);
-        double u_2 = (double)icon1.getInterpolatedU(2.0D);
-        double u_3 = (double)icon1.getInterpolatedU(3.0D);
-        double u_4 = (double)icon1.getInterpolatedU(4.0D);
-        double u_5 = (double)icon1.getInterpolatedU(5.0D);
-        double u_6 = (double)icon1.getInterpolatedU(6.0D);
-        double u_7 = (double)icon1.getInterpolatedU(7.0D);
-        double u_8 = (double)icon1.getInterpolatedU(8.0D);
-        double u_9 = (double)icon1.getInterpolatedU(9.0D);
-        double u_10 = (double)icon1.getInterpolatedU(10.0D);
-        double u_11 = (double)icon1.getInterpolatedU(11.0D);
-        double u_12 = (double)icon1.getInterpolatedU(12.0D);
-        double u_13 = (double)icon1.getInterpolatedU(13.0D);
-        double u_14 = (double)icon1.getInterpolatedU(14.0D);
-        double u_15 = (double)icon1.getInterpolatedU(15.0D);
-        double u_16 = (double)icon1.getMaxU();
-        
-        double v_0 = (double)icon1.getMinV();
-        double v_1 = (double)icon1.getInterpolatedV(1.0D);
-        double v_2 = (double)icon1.getInterpolatedV(2.0D);
-        double v_3 = (double)icon1.getInterpolatedV(3.0D);
-        double v_4 = (double)icon1.getInterpolatedV(4.0D);
-        double v_5 = (double)icon1.getInterpolatedV(5.0D);
-        double v_6 = (double)icon1.getInterpolatedV(6.0D);
-        double v_7 = (double)icon1.getInterpolatedV(7.0D);
-        double v_8 = (double)icon1.getInterpolatedV(8.0D);
-        double v_9 = (double)icon1.getInterpolatedV(9.0D);
-        double v_10 = (double)icon1.getInterpolatedV(10.0D);
-        double v_11 = (double)icon1.getInterpolatedV(11.0D);
-        double v_12 = (double)icon1.getInterpolatedV(12.0D);
-        double v_13 = (double)icon1.getInterpolatedV(13.0D);
-        double v_14 = (double)icon1.getInterpolatedV(14.0D);
-        double v_15 = (double)icon1.getInterpolatedV(15.0D);
-        double v_16 = (double)icon1.getMaxV();
         
         // Vertex points
         double x = (double)par2;
@@ -3578,24 +3515,24 @@ public class RenderBlocks
         	// First Piece
         	// Front left
             tessellator.addVertexWithUV( x, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
-            tessellator.addVertexWithUV( x,  y, z2, u0, v0);
+            tessellator.addVertexWithUV(x1, y1, z2, u7, v0);
+            tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
+            tessellator.addVertexWithUV( x,  y, z2, u0, v16);
             // Front right
-            tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x3,  y, z2, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+            tessellator.addVertexWithUV(x3, y1, z2, u16, v0);
+            tessellator.addVertexWithUV(x3,  y, z2, u16, v16);
+            tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
         	// Back right
         	tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
-            tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
-            tessellator.addVertexWithUV(x3,  y, z1, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z1, u7, v0);
+            tessellator.addVertexWithUV(x2,  y, z1, u7, v16);
+            tessellator.addVertexWithUV(x3,  y, z1, u0, v16);
         	// Back left
-        	tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-        	tessellator.addVertexWithUV( x, y1, z1, u0, v0);
-        	tessellator.addVertexWithUV( x,  y, z1, u0, v0);
-        	tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
+        	tessellator.addVertexWithUV(x1, y1, z1, u9, v0);
+        	tessellator.addVertexWithUV( x, y1, z1, u16, v0);
+        	tessellator.addVertexWithUV( x,  y, z1, u16, v16);
+        	tessellator.addVertexWithUV(x1,  y, z1, u9, v16);
             // Top
             tessellator.addVertexWithUV( x, y1, z1, u0, v0);
             tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
@@ -3634,15 +3571,15 @@ public class RenderBlocks
             tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
             tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
             // Left
-            tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x1, y1, z3, u0, v0);
-            tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
-            tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
+            tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
+            tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
+            tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
+            tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
             // Right
             tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
-            tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z2, u7, v0);
+            tessellator.addVertexWithUV(x2,  y, z2, u7, v16);
+            tessellator.addVertexWithUV(x2,  y, z3, u0, v16);
             
             // Third Piece
         	// Back
@@ -3662,14 +3599,14 @@ public class RenderBlocks
             tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
             // Left
             tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-            tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-            tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
-            tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+            tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
+            tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
+            tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
             // Right
-            tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
-            tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-            tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z1, u9, v0);
+            tessellator.addVertexWithUV(x2, y1,  z, u16, v0);
+            tessellator.addVertexWithUV(x2,  y,  z, u16, v16);
+            tessellator.addVertexWithUV(x2,  y, z1, u9, v16);
             
             return true;
         }
@@ -3756,10 +3693,10 @@ public class RenderBlocks
                     tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
                     tessellator.addVertexWithUV( x,  y, z2, u0, v16);
                     // Back
-                    tessellator.addVertexWithUV(x2, y1, z1, u10, v0);
+                    tessellator.addVertexWithUV(x2, y1, z1, u9, v0);
                     tessellator.addVertexWithUV( x, y1, z1, u0, v0);
                     tessellator.addVertexWithUV( x,  y, z1, u0, v16);
-                    tessellator.addVertexWithUV(x2,  y, z1, u10, v16);
+                    tessellator.addVertexWithUV(x2,  y, z1, u9, v16);
                     // Top
                     tessellator.addVertexWithUV( x, y1, z2, u0, v0);
                     tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
@@ -3793,15 +3730,15 @@ public class RenderBlocks
                     tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
                     tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
                     // Left
-                    tessellator.addVertexWithUV(x1, y1, z2, u7, v0);
+                    tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
                     tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
                     tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
-                    tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
+                    tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
                     // Right
-                    tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
-                    tessellator.addVertexWithUV(x2, y1, z1, u10, v0);
-                    tessellator.addVertexWithUV(x2,  y, z1, u10, v16);
-                    tessellator.addVertexWithUV(x2,  y, z3, u0, v16);
+                    tessellator.addVertexWithUV(x2, y1, z3, u16, v0);
+                    tessellator.addVertexWithUV(x2, y1, z1, u7, v0);
+                    tessellator.addVertexWithUV(x2,  y, z1, u7, v16);
+                    tessellator.addVertexWithUV(x2,  y, z3, u16, v16);
                     
                     return true;
         		}
@@ -3811,14 +3748,14 @@ public class RenderBlocks
         		if(!W)
         		{
         			// Front
-        			tessellator.addVertexWithUV(x1, y1, z1, u10, v0);
+        			tessellator.addVertexWithUV(x1, y1, z1, u9, v0);
                     tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
                     tessellator.addVertexWithUV(x3,  y, z1, u0, v16);
-                    tessellator.addVertexWithUV(x1,  y, z1, u10, v16);
+                    tessellator.addVertexWithUV(x1,  y, z1, u9, v16);
                     // Back
                     tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-                    tessellator.addVertexWithUV(x1, y1, z2, u10, v0);
-                    tessellator.addVertexWithUV(x1,  y, z2, u10, v16);
+                    tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
+                    tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
                     tessellator.addVertexWithUV(x3,  y, z2, u0, v16);
                     // Top
                     tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
@@ -3883,15 +3820,15 @@ public class RenderBlocks
         	{
         		// First Piece
         		// Front
-                tessellator.addVertexWithUV(x2, y1, z2, u7, v0);
-                tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x3,  y, z2, u0, v16);
-                tessellator.addVertexWithUV(x2,  y, z2, u7, v16);
+                tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x3, y1, z2, u16, v0);
+                tessellator.addVertexWithUV(x3,  y, z2, u16, v16);
+                tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
         		// Back
-        		tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z1, u10, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u10, v16);
-                tessellator.addVertexWithUV(x3,  y, z1, u0, v16);
+        		tessellator.addVertexWithUV(x3, y1, z1, u16, v0);
+                tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
+                tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
+                tessellator.addVertexWithUV(x3,  y, z1, u16, v16);
                 // Top
                 tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
                 tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
@@ -3925,15 +3862,15 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
                 tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
                 // Left
-                tessellator.addVertexWithUV(x1, y1, z1, u10, v0);
-                tessellator.addVertexWithUV(x1, y1, z3, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z3, u0, v16);
-                tessellator.addVertexWithUV(x1,  y, z1, u10, v16);
+                tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
+                tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
+                tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
+                tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
                 // Right
-                tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
-                tessellator.addVertexWithUV(x2, y1, z2, u7, v0);
-                tessellator.addVertexWithUV(x2,  y, z2, u7, v16);
-                tessellator.addVertexWithUV(x2,  y, z3, u0, v16);
+                tessellator.addVertexWithUV(x2, y1, z3, u16, v0);
+                tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
+                tessellator.addVertexWithUV(x2,  y, z3, u16, v16);
                 
         		return true;
         	}
@@ -3946,15 +3883,15 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
                 tessellator.addVertexWithUV( x,  y, z2, u0, v16);
                 // Front right
-                tessellator.addVertexWithUV(x2, y1, z2, u10, v0);
-                tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x3,  y, z2, u0, v16);
-                tessellator.addVertexWithUV(x2,  y, z2, u10, v16);
+                tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x3, y1, z2, u16, v0);
+                tessellator.addVertexWithUV(x3,  y, z2, u16, v16);
+                tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
         		// Back
-        		tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
-                tessellator.addVertexWithUV( x, y1, z1, u16, v0);
-                tessellator.addVertexWithUV( x,  y, z1, u16, v16);
-                tessellator.addVertexWithUV(x3,  y, z1, u0, v16);
+        		tessellator.addVertexWithUV(x3, y1, z1, u16, v0);
+                tessellator.addVertexWithUV( x, y1, z1, u0, v0);
+                tessellator.addVertexWithUV( x,  y, z1, u0, v16);
+                tessellator.addVertexWithUV(x3,  y, z1, u16, v16);
                 // Top
                 tessellator.addVertexWithUV( x, y1, z1, u0, v0);
                 tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
@@ -3993,15 +3930,15 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
                 tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
                 // Left
-                tessellator.addVertexWithUV(x1, y1, z2, u7, v0);
-                tessellator.addVertexWithUV(x1, y1, z3, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z3, u0, v16);
-                tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
+                tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
+                tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
+                tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
                 // Right
-                tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
-                tessellator.addVertexWithUV(x2, y1, z2, u7, v0);
-                tessellator.addVertexWithUV(x2,  y, z2, u7, v16);
-                tessellator.addVertexWithUV(x2,  y, z3, u0, v16);
+                tessellator.addVertexWithUV(x2, y1, z3, u16, v0);
+                tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
+                tessellator.addVertexWithUV(x2,  y, z3, u16, v16);
                 
         		return true;
         	}
@@ -4034,14 +3971,14 @@ public class RenderBlocks
                     tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
                     // Left
                     tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-                    tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-                    tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
-                    tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                    tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
+                    tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
+                    tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
                     // Right
-                    tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
+                    tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
                     tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
+                    tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+                    tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
                     
         			return true;
         		}
@@ -4050,14 +3987,14 @@ public class RenderBlocks
         			// First Piece
             		// Front
                     tessellator.addVertexWithUV( x, y1, z2, u0, v0);
-                    tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
-                    tessellator.addVertexWithUV( x,  y, z2, u0, v0);
+                    tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+                    tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
+                    tessellator.addVertexWithUV( x,  y, z2, u0, v16);
         			// Back
-        			tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
+        			tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
                     tessellator.addVertexWithUV( x, y1, z1, u0, v0);
-                    tessellator.addVertexWithUV( x,  y, z1, u0, v0);
-                    tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
+                    tessellator.addVertexWithUV( x,  y, z1, u0, v16);
+                    tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
                     // Top
                     tessellator.addVertexWithUV( x, y1, z1, u0, v0);
                     tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
@@ -4073,13 +4010,13 @@ public class RenderBlocks
                     tessellator.addVertexWithUV( x, y1, z2, u0, v0);
                     tessellator.addVertexWithUV( x,  y, z2, u0, v0);
                     tessellator.addVertexWithUV( x,  y, z1, u0, v0);
-                    // Right
-                    tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
-                    tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
 
                     // Second Piece
+                    // Back
+        			tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
+                    tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
+                    tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                    tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
                     // Top
                     tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
                     tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
@@ -4092,14 +4029,14 @@ public class RenderBlocks
                     tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
                     // Left
                     tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-                    tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-                    tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
-                    tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                    tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
+                    tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
+                    tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
                     // Right
-                    tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
+                    tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
                     tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-                    tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
+                    tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+                    tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
                     
         			return true;
         		}
@@ -4128,14 +4065,14 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
                 // Left
                 tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z3, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
-                tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
+                tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
+                tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
                 // Right
-                tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
+                tessellator.addVertexWithUV(x2, y1, z3, u16, v0);
                 tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
+                tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+                tessellator.addVertexWithUV(x2,  y, z3, u16, v16);
 
         		return true;
         	}
@@ -4144,14 +4081,14 @@ public class RenderBlocks
         		// First Piece
         		// Front
                 tessellator.addVertexWithUV( x, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
-                tessellator.addVertexWithUV( x,  y, z2, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z2, u7, v0);
+                tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
+                tessellator.addVertexWithUV( x,  y, z2, u0, v16);
         		// Back
-        		tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
+        		tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
                 tessellator.addVertexWithUV( x, y1, z1, u0, v0);
-                tessellator.addVertexWithUV( x,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
+                tessellator.addVertexWithUV( x,  y, z1, u0, v16);
+                tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
                 // Top
                 tessellator.addVertexWithUV( x, y1, z1, u0, v0);
                 tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
@@ -4191,19 +4128,19 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
                 // Left back
                 tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
+                tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
+                tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
                 // Left front
-                tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z3, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
+                tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
+                tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
                 // Right
-                tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
+                tessellator.addVertexWithUV(x2, y1, z3, u16, v0);
                 tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
+                tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+                tessellator.addVertexWithUV(x2,  y, z3, u16, v16);
                 
         		return true;
         	}
@@ -4214,15 +4151,15 @@ public class RenderBlocks
         	{
         		// First Piece
         		// Front
-                tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x3,  y, z2, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z2, u7, v0);
+                tessellator.addVertexWithUV(x3, y1, z2, u16, v0);
+                tessellator.addVertexWithUV(x3,  y, z2, u16, v16);
+                tessellator.addVertexWithUV(x1,  y, z2, u7, v16);
         		// Back
-        		tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x3,  y, z1, u0, v0);
+        		tessellator.addVertexWithUV(x3, y1, z1, u16, v0);
+                tessellator.addVertexWithUV(x2, y1, z1, u9, v0);
+                tessellator.addVertexWithUV(x2,  y, z1, u9, v16);
+                tessellator.addVertexWithUV(x3,  y, z1, u16, v16);
                 // Top
                 tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
                 tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
@@ -4232,11 +4169,6 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
                 tessellator.addVertexWithUV(x3,  y, z2, u0, v0);
                 tessellator.addVertexWithUV(x3,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
-                // Left
-                tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z2, u0, v0);
                 tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
                 // Right
                 tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
@@ -4262,14 +4194,14 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
                 // Left
                 tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z2, u9, v0);
+                tessellator.addVertexWithUV(x1,  y, z2, u9, v16);
+                tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
                 // Right
-                tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
+                tessellator.addVertexWithUV(x2, y1, z1, u7, v0);
                 tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
+                tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+                tessellator.addVertexWithUV(x2,  y, z1, u7, v16);
                 
         		return true;
         	}
@@ -4278,19 +4210,19 @@ public class RenderBlocks
         		// First Piece
         		// Front
                 tessellator.addVertexWithUV( x, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-                tessellator.addVertexWithUV(x3,  y, z2, u0, v0);
-                tessellator.addVertexWithUV( x,  y, z2, u0, v0);
+                tessellator.addVertexWithUV(x3, y1, z2, u16, v0);
+                tessellator.addVertexWithUV(x3,  y, z2, u16, v16);
+                tessellator.addVertexWithUV( x,  y, z2, u0, v16);
         		// Back left
-        		tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
+        		tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
                 tessellator.addVertexWithUV( x, y1, z1, u0, v0);
-                tessellator.addVertexWithUV( x,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
+                tessellator.addVertexWithUV( x,  y, z1, u0, v16);
+                tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
                 // Back right
-        		tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x3,  y, z1, u0, v0);
+        		tessellator.addVertexWithUV(x3, y1, z1, u16, v0);
+                tessellator.addVertexWithUV(x2, y1, z1, u9, v0);
+                tessellator.addVertexWithUV(x2,  y, z1, u9, v16);
+                tessellator.addVertexWithUV(x3,  y, z1, u16, v16);
                 // Top
                 tessellator.addVertexWithUV( x, y1, z1, u0, v0);
                 tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
@@ -4330,14 +4262,14 @@ public class RenderBlocks
                 tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
                 // Left
                 tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x1, y1, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y, z1, u0, v0);
-                tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+                tessellator.addVertexWithUV(x1, y1, z1, u7, v0);
+                tessellator.addVertexWithUV(x1,  y, z1, u7, v16);
+                tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
                 // Right
-                tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
+                tessellator.addVertexWithUV(x2, y1, z1, u7, v0);
                 tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-                tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
+                tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+                tessellator.addVertexWithUV(x2,  y, z1, u7, v16);
                 
         		return true;
         	}
@@ -4367,31 +4299,31 @@ public class RenderBlocks
             tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
             // Left
             tessellator.addVertexWithUV(x1, y1,  z, u0, v0);
-            tessellator.addVertexWithUV(x1, y1, z3, u0, v0);
-            tessellator.addVertexWithUV(x1,  y, z3, u0, v0);
-            tessellator.addVertexWithUV(x1,  y,  z, u0, v0);
+            tessellator.addVertexWithUV(x1, y1, z3, u16, v0);
+            tessellator.addVertexWithUV(x1,  y, z3, u16, v16);
+            tessellator.addVertexWithUV(x1,  y,  z, u0, v16);
             // Right front
-            tessellator.addVertexWithUV(x2, y1, z3, u0, v0);
-            tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z3, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z3, u16, v0);
+            tessellator.addVertexWithUV(x2, y1, z2, u9, v0);
+            tessellator.addVertexWithUV(x2,  y, z2, u9, v16);
+            tessellator.addVertexWithUV(x2,  y, z3, u16, v16);
             // Right back
-            tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z1, u7, v0);
             tessellator.addVertexWithUV(x2, y1,  z, u0, v0);
-            tessellator.addVertexWithUV(x2,  y,  z, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
+            tessellator.addVertexWithUV(x2,  y,  z, u0, v16);
+            tessellator.addVertexWithUV(x2,  y, z1, u7, v16);
             
             // Second Piece
         	// Front
-            tessellator.addVertexWithUV(x2, y1, z2, u0, v0);
+            tessellator.addVertexWithUV(x2, y1, z2, u7, v0);
             tessellator.addVertexWithUV(x3, y1, z2, u0, v0);
-            tessellator.addVertexWithUV(x3,  y, z2, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z2, u0, v0);
+            tessellator.addVertexWithUV(x3,  y, z2, u0, v16);
+            tessellator.addVertexWithUV(x2,  y, z2, u7, v16);
         	// Back
-        	tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
-            tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
-            tessellator.addVertexWithUV(x2,  y, z1, u0, v0);
-            tessellator.addVertexWithUV(x3,  y, z1, u0, v0);
+        	tessellator.addVertexWithUV(x3, y1, z1, u16, v0);
+            tessellator.addVertexWithUV(x2, y1, z1, u9, v0);
+            tessellator.addVertexWithUV(x2,  y, z1, u9, v16);
+            tessellator.addVertexWithUV(x3,  y, z1, u16, v16);
             // Top
             tessellator.addVertexWithUV(x2, y1, z1, u0, v0);
             tessellator.addVertexWithUV(x3, y1, z1, u0, v0);
