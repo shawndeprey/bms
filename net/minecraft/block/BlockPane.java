@@ -1,9 +1,12 @@
 package net.minecraft.block;
 
+import bms.Bms;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.List;
 import java.util.Random;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -210,7 +213,22 @@ public class BlockPane extends Block
      */
     public final boolean canThisPaneConnectToThisBlockID(int par1)
     {
-        return Block.opaqueCubeLookup[par1] || par1 == this.blockID || par1 == Block.glass.blockID;
+    	return Block.opaqueCubeLookup[par1] ||
+        		par1 == this.blockID ||
+        		par1 == Block.glass.blockID ||
+				par1 == Block.thinGlass.blockID ||
+        		par1 == Bms.thinGlassRed.blockID ||
+				par1 == Bms.thinGlassPink.blockID ||
+				par1 == Bms.thinGlassOrange.blockID ||
+				par1 == Bms.thinGlassYellow.blockID ||
+				par1 == Bms.thinGlassPurple.blockID ||
+				par1 == Bms.thinGlassLightPurple.blockID ||
+				par1 == Bms.thinGlassGreen.blockID ||
+				par1 == Bms.thinGlassLightGreen.blockID ||
+				par1 == Bms.thinGlassBlue.blockID ||
+				par1 == Bms.thinGlassLightBlue.blockID ||
+				par1 == Bms.thinGlassGrey.blockID ||
+				par1 == Bms.thinGlassLightGrey.blockID;
     }
 
     /**
