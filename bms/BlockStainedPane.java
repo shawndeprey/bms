@@ -72,6 +72,7 @@ public class BlockStainedPane extends Block
         return Block.opaqueCubeLookup[par1] ||
         		par1 == this.blockID ||
         		par1 == Block.glass.blockID ||
+				par1 == Block.thinGlass.blockID ||
         		par1 == Bms.thinGlassRed.blockID ||
 				par1 == Bms.thinGlassPink.blockID ||
 				par1 == Bms.thinGlassOrange.blockID ||
