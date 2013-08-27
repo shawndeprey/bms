@@ -1929,7 +1929,8 @@ public class RenderGlobal implements IWorldAccess
             }
             else
             {
-                double d9 = 16.0D;
+            	// Render particles LIKE A BAUS
+                double d9 = 256.0D;
 
                 if (d6 * d6 + d7 * d7 + d8 * d8 > d9 * d9)
                 {

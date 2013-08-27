@@ -3,6 +3,7 @@ package bms;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -11,9 +12,11 @@ import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.src.ModLoader;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -22,6 +25,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
  
@@ -72,17 +76,21 @@ public class Bms {
 	public final static Block adamantiumBlock =			new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("adamantiumBlock").func_111022_d("bms:adamantiumBlock");
 	
 	// Items
-	private static Item titaniumIngot =					new ItemBMSIngots(9000, "titaniumIngot");
-	private static Item adamantiumIngot =				new ItemBMSIngots(9001, "adamantiumIngot");
-	private static Item ruby =							new ItemBMSGems(9002, "ruby");
-	private static Item sapphire =						new ItemBMSGems(9003, "sapphire");
-	private static Item citrine =						new ItemBMSGems(9004, "citrine");
-	private static Item jadeite =						new ItemBMSGems(9005, "jadeite");
-	private static Item rubyPowder =					new Item(9006).setUnlocalizedName("rubyPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:rubyPowder");
-	private static Item sapphirePowder =				new Item(9007).setUnlocalizedName("sapphirePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:sapphirePowder");
-	private static Item citrinePowder =					new Item(9008).setUnlocalizedName("citrinePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:citrinePowder");
-	private static Item jadeitePowder =					new Item(9009).setUnlocalizedName("jadeitePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:jadeitePowder");
-	private static Item diamondPowder =					new Item(9010).setUnlocalizedName("diamondPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:diamondPowder");
+	private static Item titaniumIngot =			new ItemBMSIngots(9000, "titaniumIngot");
+	private static Item adamantiumIngot =		new ItemBMSIngots(9001, "adamantiumIngot");
+	private static Item ruby =					new ItemBMSGems(9002, "ruby");
+	private static Item sapphire =				new ItemBMSGems(9003, "sapphire");
+	private static Item citrine =				new ItemBMSGems(9004, "citrine");
+	private static Item jadeite =				new ItemBMSGems(9005, "jadeite");
+	private static Item rubyPowder =			new Item(9006).setUnlocalizedName("rubyPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:rubyPowder");
+	private static Item sapphirePowder =		new Item(9007).setUnlocalizedName("sapphirePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:sapphirePowder");
+	private static Item citrinePowder =			new Item(9008).setUnlocalizedName("citrinePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:citrinePowder");
+	private static Item jadeitePowder =			new Item(9009).setUnlocalizedName("jadeitePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:jadeitePowder");
+	private static Item diamondPowder =			new Item(9010).setUnlocalizedName("diamondPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:diamondPowder");
+	
+	//Projectile Weapons
+	public static Item slingshot = new ItemSlingshot(9021).setUnlocalizedName("slingshot").func_111206_d("bms:slingshot");
+	public static Item pebble =	new Item(9022).setUnlocalizedName("pebble").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:pebble");
  
 	// EnumToolMaterials
 	final static EnumToolMaterial TITANIUM = 			EnumHelper.addToolMaterial("TITANIUM", 3, 1561, 8.0F, 3.0F, 10);
@@ -292,6 +300,13 @@ public class Bms {
         GameRegistry.registerItem(adamantiumSword, "adamantiumSword");
         	LanguageRegistry.addName(adamantiumSword, "Adamantium Sword");
         	
+    	// Projectile Weapons
+        GameRegistry.registerItem(slingshot, "slingshot");
+        	LanguageRegistry.addName(slingshot, "Slingshot");
+        GameRegistry.registerItem(pebble, "pebble");
+        	LanguageRegistry.addName(pebble, "Pebble");
+        EntityRegistry.registerModEntity(EntityPebble.class, "Entity Pebble", ModLoader.getUniqueEntityId(), this, 128, 1, true);
+        RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderSnowball(pebble));
 
     	GameRegistry.registerWorldGenerator(new BMSOreWorldGenerator());
     }
