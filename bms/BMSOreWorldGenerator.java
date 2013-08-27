@@ -37,42 +37,42 @@ public class BMSOreWorldGenerator implements IWorldGenerator{
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(48);
 			int zCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Bms.titaniumOre.blockID, 7)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(BlocksBMS.titaniumOre.blockID, 7)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		for(int b = 0; b < 10; b++)
 		{
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(20);
 			int zCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Bms.adamantiumOre.blockID, 3)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(BlocksBMS.adamantiumOre.blockID, 3)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		for(int c = 0; c < 10; c++)
 		{
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(30);
 			int zCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Bms.rubyOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(BlocksBMS.rubyOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		for(int d = 0; d < 10; d++)
 		{
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(30);
 			int zCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Bms.sapphireOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(BlocksBMS.sapphireOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		for(int e = 0; e < 10; e++)
 		{
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(30);
 			int zCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Bms.citrineOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(BlocksBMS.citrineOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 		for(int f = 0; f < 10; f++)
 		{
 			int xCoord = i + random.nextInt(16);
 			int yCoord = random.nextInt(30);
 			int zCoord = j + random.nextInt(16);
-			(new WorldGenMinable(Bms.jadeiteOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenMinable(BlocksBMS.jadeiteOre.blockID, 5)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 

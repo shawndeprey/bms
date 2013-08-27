@@ -25,11 +25,11 @@ public class ItemSlingshot extends Item
     {
     	boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (par3EntityPlayer.inventory.hasItem(Bms.pebble.itemID)) {
+        if (par3EntityPlayer.inventory.hasItem(ItemsBMS.pebble.itemID)) {
         	par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
         	par3EntityPlayer.swingItem();
         	if(!flag){
-        		par3EntityPlayer.inventory.consumeInventoryItem(Bms.pebble.itemID);
+        		par3EntityPlayer.inventory.consumeInventoryItem(ItemsBMS.pebble.itemID);
         	}
         	if (!par2World.isRemote) {
                 par2World.spawnEntityInWorld(new EntityPebble(par2World, par3EntityPlayer));
