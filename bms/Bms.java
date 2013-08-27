@@ -31,11 +31,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @Mod(modid=BasicInfo.ID, name=BasicInfo.NAME, version=BasicInfo.VERSION)
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
 public class Bms {
-	
-	// EnumToolMaterials
-	final static EnumToolMaterial TITANIUM = 			EnumHelper.addToolMaterial("TITANIUM", 3, 1561, 8.0F, 3.0F, 10);
-	final static EnumToolMaterial ADAMANTIUM = 			EnumHelper.addToolMaterial("ADAMANTIUM", 4, 2500, 10.0F, 4.0F, 25);
-	
     // The instance of your mod that Forge uses.
     @Instance("Bms")
     public static Bms instance;
@@ -64,8 +59,11 @@ public class Bms {
         // New Blocks
         BlocksBMS.registerBlocks();
         
-        EntityRegistry.registerModEntity(EntityPebble.class, "Entity Pebble", ModLoader.getUniqueEntityId(), this, 128, 1, true);
-        RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderSnowball(ItemsBMS.pebble));
+        // New Entities
+        EntitiesBMS.registerEntities(instance);
+        
+        // New Renders
+        RenderBMS.registerRenderers();
 
     	GameRegistry.registerWorldGenerator(new BMSOreWorldGenerator());
     }

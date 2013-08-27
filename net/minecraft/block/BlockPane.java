@@ -1,9 +1,5 @@
 package net.minecraft.block;
 
-import bms.Bms;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import java.util.List;
 import java.util.Random;
 
@@ -17,6 +13,9 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import bms.BlocksBMS;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPane extends Block
 {
@@ -217,18 +216,18 @@ public class BlockPane extends Block
         		par1 == this.blockID ||
         		par1 == Block.glass.blockID ||
 				par1 == Block.thinGlass.blockID ||
-        		par1 == Bms.thinGlassRed.blockID ||
-				par1 == Bms.thinGlassPink.blockID ||
-				par1 == Bms.thinGlassOrange.blockID ||
-				par1 == Bms.thinGlassYellow.blockID ||
-				par1 == Bms.thinGlassPurple.blockID ||
-				par1 == Bms.thinGlassLightPurple.blockID ||
-				par1 == Bms.thinGlassGreen.blockID ||
-				par1 == Bms.thinGlassLightGreen.blockID ||
-				par1 == Bms.thinGlassBlue.blockID ||
-				par1 == Bms.thinGlassLightBlue.blockID ||
-				par1 == Bms.thinGlassGrey.blockID ||
-				par1 == Bms.thinGlassLightGrey.blockID;
+        		par1 == BlocksBMS.thinGlassRed.blockID ||
+				par1 == BlocksBMS.thinGlassPink.blockID ||
+				par1 == BlocksBMS.thinGlassOrange.blockID ||
+				par1 == BlocksBMS.thinGlassYellow.blockID ||
+				par1 == BlocksBMS.thinGlassPurple.blockID ||
+				par1 == BlocksBMS.thinGlassLightPurple.blockID ||
+				par1 == BlocksBMS.thinGlassGreen.blockID ||
+				par1 == BlocksBMS.thinGlassLightGreen.blockID ||
+				par1 == BlocksBMS.thinGlassBlue.blockID ||
+				par1 == BlocksBMS.thinGlassLightBlue.blockID ||
+				par1 == BlocksBMS.thinGlassGrey.blockID ||
+				par1 == BlocksBMS.thinGlassLightGrey.blockID;
     }
 
     /**

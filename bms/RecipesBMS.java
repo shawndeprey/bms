@@ -7,8 +7,8 @@ public class RecipesBMS {
 	
 	public static boolean registerRecipes()
     {
-		GameRegistry.addSmelting(Bms.titaniumOre.blockID, ItemsBMS.titaniumIngotStack, 0.5f);
-        GameRegistry.addSmelting(Bms.adamantiumOre.blockID, ItemsBMS.adamantiumIngotStack, 0.5f);
+		GameRegistry.addSmelting(BlocksBMS.titaniumOre.blockID, ItemsBMS.titaniumIngotStack, 0.5f);
+        GameRegistry.addSmelting(BlocksBMS.adamantiumOre.blockID, ItemsBMS.adamantiumIngotStack, 0.5f);
         
 		GameRegistry.addShapelessRecipe(ItemsBMS.rubyPowderStack, ItemsBMS.rubyStack);
         GameRegistry.addShapelessRecipe(ItemsBMS.sapphirePowderStack, ItemsBMS.sapphireStack);

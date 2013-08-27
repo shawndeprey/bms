@@ -94,18 +94,18 @@ public class ItemsBMS {
     	pebble =							new Item(9022).setUnlocalizedName("pebble").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:pebble");
         
     	// Tools
-    	titaniumShovel = 					(new ItemSpade(9011, Bms.TITANIUM)).setUnlocalizedName("titaniumShovel").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumShovel");
-    	titaniumPickaxe = 					(new ItemPickaxe(9012, Bms.TITANIUM)).setUnlocalizedName("titaniumPickaxe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumPickaxe");
-    	titaniumHatchet = 					(new ItemAxe(9013, Bms.TITANIUM)).setUnlocalizedName("titaniumHatchet").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumHatchet");
-    	titaniumHoe = 						(new ItemHoe(9014, Bms.TITANIUM)).setUnlocalizedName("titaniumHoe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumHoe");
-    	adamantiumShovel = 					(new ItemSpade(9015, Bms.ADAMANTIUM)).setUnlocalizedName("adamantiumShovel").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumShovel");
-    	adamantiumPickaxe = 				(new ItemPickaxe(9016, Bms.ADAMANTIUM)).setUnlocalizedName("adamantiumPickaxe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumPickaxe");
-    	adamantiumHatchet = 				(new ItemAxe(9017, Bms.ADAMANTIUM)).setUnlocalizedName("adamantiumHatchet").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumHatchet");
-    	adamantiumHoe = 					(new ItemHoe(9018, Bms.ADAMANTIUM)).setUnlocalizedName("adamantiumHoe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumHoe");
+    	titaniumShovel = 					(new ItemSpade(9011, EnumBMS.TITANIUM)).setUnlocalizedName("titaniumShovel").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumShovel");
+    	titaniumPickaxe = 					(new ItemPickaxe(9012, EnumBMS.TITANIUM)).setUnlocalizedName("titaniumPickaxe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumPickaxe");
+    	titaniumHatchet = 					(new ItemAxe(9013, EnumBMS.TITANIUM)).setUnlocalizedName("titaniumHatchet").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumHatchet");
+    	titaniumHoe = 						(new ItemHoe(9014, EnumBMS.TITANIUM)).setUnlocalizedName("titaniumHoe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:titaniumHoe");
+    	adamantiumShovel = 					(new ItemSpade(9015, EnumBMS.ADAMANTIUM)).setUnlocalizedName("adamantiumShovel").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumShovel");
+    	adamantiumPickaxe = 				(new ItemPickaxe(9016, EnumBMS.ADAMANTIUM)).setUnlocalizedName("adamantiumPickaxe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumPickaxe");
+    	adamantiumHatchet = 				(new ItemAxe(9017, EnumBMS.ADAMANTIUM)).setUnlocalizedName("adamantiumHatchet").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumHatchet");
+    	adamantiumHoe = 					(new ItemHoe(9018, EnumBMS.ADAMANTIUM)).setUnlocalizedName("adamantiumHoe").setCreativeTab(CreativeTabs.tabTools).func_111206_d("bms:adamantiumHoe");
     	
     	// Weapons
-    	titaniumSword = 					(new ItemSword(9019, Bms.TITANIUM)).setUnlocalizedName("titaniumSword").setCreativeTab(CreativeTabs.tabCombat).func_111206_d("bms:titaniumSword");
-    	adamantiumSword = 					(new ItemSword(9020, Bms.ADAMANTIUM)).setUnlocalizedName("adamantiumSword").setCreativeTab(CreativeTabs.tabCombat).func_111206_d("bms:adamantiumSword");
+    	titaniumSword = 					(new ItemSword(9019, EnumBMS.TITANIUM)).setUnlocalizedName("titaniumSword").setCreativeTab(CreativeTabs.tabCombat).func_111206_d("bms:titaniumSword");
+    	adamantiumSword = 					(new ItemSword(9020, EnumBMS.ADAMANTIUM)).setUnlocalizedName("adamantiumSword").setCreativeTab(CreativeTabs.tabCombat).func_111206_d("bms:adamantiumSword");
     	
     	return true;
     }
