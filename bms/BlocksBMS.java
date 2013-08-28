@@ -49,7 +49,8 @@ public class BlocksBMS {
 	public final static Block adamantiumBlock =			new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("adamantiumBlock").func_111022_d("bms:adamantiumBlock");
 	
 	// Tent Blocks
-	public final static Block tentBlock =				new BlocksTent(2033, Material.rock, "tentBlock");
+	public final static Block tentBlock =				new BlocksTent(2033, Material.cloth, "tentBlock");
+public final static Block tentClothBlock =				new BlocksTent(2034, Material.cloth, "tentClothBlock");
 	
 	public static boolean registerBlocks()
 	{
@@ -132,6 +133,8 @@ public class BlocksBMS {
     	// Tent Block
     	GameRegistry.registerBlock(tentBlock, "tentBlock");
     		LanguageRegistry.addName(tentBlock, "Tent Block");
+		GameRegistry.registerBlock(tentClothBlock, "tentClothBlock");
+    		LanguageRegistry.addName(tentClothBlock, "Tent Cloth");
         	
 		return true;
 	}
