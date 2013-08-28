@@ -44,8 +44,12 @@ public class BlocksBMS {
 	public final static Block citrineOre =				new BlockBMSOre(2029, 9004, Material.rock, "citrineOre");
 	public final static Block jadeiteOre =				new BlockBMSOre(2030, 9005, Material.rock, "jadeiteOre");
 	
+	// Ore Blocks
 	public final static Block titaniumBlock =			new BlockOreStorage(2031).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("bms:titaniumBlock").func_111022_d("bms:titaniumBlock");
 	public final static Block adamantiumBlock =			new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("adamantiumBlock").func_111022_d("bms:adamantiumBlock");
+	
+	// Tent Blocks
+	public final static Block tentBlock =				new BlocksTent(2033, Material.rock, "tentBlock");
 	
 	public static boolean registerBlocks()
 	{
@@ -124,6 +128,10 @@ public class BlocksBMS {
     	GameRegistry.registerBlock(jadeiteOre, "jadeiteOre");
         	LanguageRegistry.addName(jadeiteOre, "Jadeite Ore");
         	MinecraftForge.setBlockHarvestLevel(jadeiteOre, "pickaxe", 3); // 3 = diamond
+        	
+    	// Tent Block
+    	GameRegistry.registerBlock(tentBlock, "tentBlock");
+    		LanguageRegistry.addName(tentBlock, "Tent Block");
         	
 		return true;
 	}

@@ -26,7 +26,7 @@ public class BlockStainedGlass extends BlockBreakable
         setHardness(0.2F);
         setLightOpacity(3);
         setStepSound(soundGlassFootstep);
-        setUnlocalizedName("stainedGlassRed");
+        setUnlocalizedName(name);
     }
 
     @SideOnly(Side.CLIENT)
