@@ -142,57 +142,57 @@ public class ItemsBMS {
 	
 	public static boolean registerItems()
 	{
-		GameRegistry.registerItem(ItemsBMS.titaniumIngot, "titaniumIngot");
-	    	LanguageRegistry.addName(ItemsBMS.titaniumIngot, "Titanium Ingot");
-	    GameRegistry.registerItem(ItemsBMS.adamantiumIngot, "adamantiumIngot");
-	    	LanguageRegistry.addName(ItemsBMS.adamantiumIngot, "Adamantium Ingot");
-	    GameRegistry.registerItem(ItemsBMS.ruby, "ruby");
-	    	LanguageRegistry.addName(ItemsBMS.ruby, "Ruby");
-	    GameRegistry.registerItem(ItemsBMS.sapphire, "sapphire");
-	    	LanguageRegistry.addName(ItemsBMS.sapphire, "Sapphire");
-	    GameRegistry.registerItem(ItemsBMS.citrine, "citrine");
-	    	LanguageRegistry.addName(ItemsBMS.citrine, "Citrine");
-	    GameRegistry.registerItem(ItemsBMS.jadeite, "jadeite");
-	    	LanguageRegistry.addName(ItemsBMS.jadeite, "Jadeite");
-	    GameRegistry.registerItem(ItemsBMS.rubyPowder, "rubyPowder");
-	    	LanguageRegistry.addName(ItemsBMS.rubyPowder, "Ruby Powder");
-	    GameRegistry.registerItem(ItemsBMS.sapphirePowder, "sapphirePowder");
-	    	LanguageRegistry.addName(ItemsBMS.sapphirePowder, "Sapphire Powder");
-	    GameRegistry.registerItem(ItemsBMS.citrinePowder, "citrinePowder");
-	    	LanguageRegistry.addName(ItemsBMS.citrinePowder, "Citrine Powder");
-	    GameRegistry.registerItem(ItemsBMS.jadeitePowder, "jadeitePowder");
-	    	LanguageRegistry.addName(ItemsBMS.jadeitePowder, "Jadeite Powder");
-	    GameRegistry.registerItem(ItemsBMS.diamondPowder, "diamondPowder");
-	    	LanguageRegistry.addName(ItemsBMS.diamondPowder, "Diamond Powder");
+		GameRegistry.registerItem(titaniumIngot, "titaniumIngot");
+	    	LanguageRegistry.addName(titaniumIngot, "Titanium Ingot");
+	    GameRegistry.registerItem(adamantiumIngot, "adamantiumIngot");
+	    	LanguageRegistry.addName(adamantiumIngot, "Adamantium Ingot");
+	    GameRegistry.registerItem(ruby, "ruby");
+	    	LanguageRegistry.addName(ruby, "Ruby");
+	    GameRegistry.registerItem(sapphire, "sapphire");
+	    	LanguageRegistry.addName(sapphire, "Sapphire");
+	    GameRegistry.registerItem(citrine, "citrine");
+	    	LanguageRegistry.addName(citrine, "Citrine");
+	    GameRegistry.registerItem(jadeite, "jadeite");
+	    	LanguageRegistry.addName(jadeite, "Jadeite");
+	    GameRegistry.registerItem(rubyPowder, "rubyPowder");
+	    	LanguageRegistry.addName(rubyPowder, "Ruby Powder");
+	    GameRegistry.registerItem(sapphirePowder, "sapphirePowder");
+	    	LanguageRegistry.addName(sapphirePowder, "Sapphire Powder");
+	    GameRegistry.registerItem(citrinePowder, "citrinePowder");
+	    	LanguageRegistry.addName(citrinePowder, "Citrine Powder");
+	    GameRegistry.registerItem(jadeitePowder, "jadeitePowder");
+	    	LanguageRegistry.addName(jadeitePowder, "Jadeite Powder");
+	    GameRegistry.registerItem(diamondPowder, "diamondPowder");
+	    	LanguageRegistry.addName(diamondPowder, "Diamond Powder");
 	    	
-		GameRegistry.registerItem(ItemsBMS.titaniumShovel, "titaniumShovel");
-	    	LanguageRegistry.addName(ItemsBMS.titaniumShovel, "Titanium Shovel");
-	    GameRegistry.registerItem(ItemsBMS.titaniumPickaxe, "titaniumPickaxe");
-	    	LanguageRegistry.addName(ItemsBMS.titaniumPickaxe, "Titanium Pickaxe");
-	    GameRegistry.registerItem(ItemsBMS.titaniumHatchet, "titaniumHatchet");
-	    	LanguageRegistry.addName(ItemsBMS.titaniumHatchet, "Titanium Hatchet");
-	    GameRegistry.registerItem(ItemsBMS.titaniumHoe, "titaniumHoe");
-	    	LanguageRegistry.addName(ItemsBMS.titaniumHoe, "Titanium Hoe");
+		GameRegistry.registerItem(titaniumShovel, "titaniumShovel");
+	    	LanguageRegistry.addName(titaniumShovel, "Titanium Shovel");
+	    GameRegistry.registerItem(titaniumPickaxe, "titaniumPickaxe");
+	    	LanguageRegistry.addName(titaniumPickaxe, "Titanium Pickaxe");
+	    GameRegistry.registerItem(titaniumHatchet, "titaniumHatchet");
+	    	LanguageRegistry.addName(titaniumHatchet, "Titanium Hatchet");
+	    GameRegistry.registerItem(titaniumHoe, "titaniumHoe");
+	    	LanguageRegistry.addName(titaniumHoe, "Titanium Hoe");
 	    	
-	    GameRegistry.registerItem(ItemsBMS.adamantiumShovel, "adamantiumShovel");
-	    	LanguageRegistry.addName(ItemsBMS.adamantiumShovel, "Adamantium Shovel");
-	    GameRegistry.registerItem(ItemsBMS.adamantiumPickaxe, "adamantiumPickaxe");
-	    	LanguageRegistry.addName(ItemsBMS.adamantiumPickaxe, "Adamantium Pickaxe");
-	    GameRegistry.registerItem(ItemsBMS.adamantiumHatchet, "adamantiumHatchet");
-	    	LanguageRegistry.addName(ItemsBMS.adamantiumHatchet, "Adamantium Hatchet");
-	    GameRegistry.registerItem(ItemsBMS.adamantiumHoe, "adamantiumHoe");
-	    	LanguageRegistry.addName(ItemsBMS.adamantiumHoe, "Adamantium Hoe");
+	    GameRegistry.registerItem(adamantiumShovel, "adamantiumShovel");
+	    	LanguageRegistry.addName(adamantiumShovel, "Adamantium Shovel");
+	    GameRegistry.registerItem(adamantiumPickaxe, "adamantiumPickaxe");
+	    	LanguageRegistry.addName(adamantiumPickaxe, "Adamantium Pickaxe");
+	    GameRegistry.registerItem(adamantiumHatchet, "adamantiumHatchet");
+	    	LanguageRegistry.addName(adamantiumHatchet, "Adamantium Hatchet");
+	    GameRegistry.registerItem(adamantiumHoe, "adamantiumHoe");
+	    	LanguageRegistry.addName(adamantiumHoe, "Adamantium Hoe");
 	    	
-	    GameRegistry.registerItem(ItemsBMS.titaniumSword, "titaniumSword");
-	    	LanguageRegistry.addName(ItemsBMS.titaniumSword, "Titanium Sword");
-	    GameRegistry.registerItem(ItemsBMS.adamantiumSword, "adamantiumSword");
-	    	LanguageRegistry.addName(ItemsBMS.adamantiumSword, "Adamantium Sword");
+	    GameRegistry.registerItem(titaniumSword, "titaniumSword");
+	    	LanguageRegistry.addName(titaniumSword, "Titanium Sword");
+	    GameRegistry.registerItem(adamantiumSword, "adamantiumSword");
+	    	LanguageRegistry.addName(adamantiumSword, "Adamantium Sword");
 	    	
 		// Projectile Weapons
-	    GameRegistry.registerItem(ItemsBMS.slingshot, "slingshot");
-	    	LanguageRegistry.addName(ItemsBMS.slingshot, "Slingshot");
-	    GameRegistry.registerItem(ItemsBMS.pebble, "pebble");
-	    	LanguageRegistry.addName(ItemsBMS.pebble, "Pebble");
+	    GameRegistry.registerItem(slingshot, "slingshot");
+	    	LanguageRegistry.addName(slingshot, "Slingshot");
+	    GameRegistry.registerItem(pebble, "pebble");
+	    	LanguageRegistry.addName(pebble, "Pebble");
 	    	
     	return true;
 	}

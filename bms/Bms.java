@@ -60,10 +60,10 @@ public class Bms {
         BlocksBMS.registerBlocks();
         
         // New Entities
-        //EntityRegistry.registerModEntity(EntityPebble.class, "Entity Pebble", ModLoader.getUniqueEntityId(), instance, 128, 1, true);
+        EntitiesBMS.registerEntities(this);
         
         // New Renders
-        //RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderSnowball(ItemsBMS.pebble));
+        RenderBMS.registerRenderers();
 
     	GameRegistry.registerWorldGenerator(new BMSOreWorldGenerator());
     }
