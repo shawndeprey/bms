@@ -622,4 +622,5 @@ public class BlocksTent extends Block {
 			break;
 		}
 	}
+
 }

@@ -50,7 +50,7 @@ public class BlocksBMS {
 	
 	// Tent Blocks
 	public final static Block tentBlock =				new BlocksTent(2033, Material.cloth, "tentBlock");
-public final static Block tentClothBlock =				new BlocksTent(2034, Material.cloth, "tentClothBlock");
+	public final static Block tentClothBlock =			new BlockTentCloth(2034, Material.cloth, "tentClothBlock");
 	
 	public static boolean registerBlocks()
 	{
