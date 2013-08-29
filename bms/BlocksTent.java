@@ -325,22 +325,26 @@ public class BlocksTent extends Block {
 							{
 								if(a == 3)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 0, 2);
 								}
 								else
 									continue;
 							}
 							else if(b == 2)
 							{
-								if(a == 2 || a == 4)
+								if(a == 2)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 4)
+								{
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 3)
 								{
 									if(c == 0 || c == 4)
 									{
-										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -350,17 +354,21 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 1)
 							{
-								if(a == 1 || a == 5)
+								if(a == 1)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 5)
+								{
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 2 || a == 3 || a == 4)
 								{
 									if(c == 0)
-										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									if(a != 3)
 										if(c == 4)
-											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									else
 										continue;
 								}
@@ -369,18 +377,22 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 0)
 							{
-								if(a == 0 || a == 6)
+								if(a == 0)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 6)
+								{
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else
 								{
 									if(a != 3)
 									{
 										if(c == 0)
-											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 										if(c == 4)
-											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -401,22 +413,26 @@ public class BlocksTent extends Block {
 							{
 								if(a == 3)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 0, 2);
 								}
 								else
 									continue;
 							}
 							else if(b == 2)
 							{
-								if(a == 2 || a == 4)
+								if(a == 2)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 4)
+								{
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 3)
 								{
 									if(c == 0 || c == 4)
 									{
-										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -426,17 +442,21 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 1)
 							{
-								if(a == 1 || a == 5)
+								if(a == 1)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 5)
+								{
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 2 || a == 3 || a == 4)
 								{
 									if(c == 4)
-										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									if(a != 3)
 										if(c == 0)
-											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									else
 										continue;
 								}
@@ -445,18 +465,22 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 0)
 							{
-								if(a == 0 || a == 6)
+								if(a == 0)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 6)
+								{
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else
 								{
 									if(a != 3)
 									{
 										if(c == 0)
-											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 										if(c == 4)
-											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -477,22 +501,26 @@ public class BlocksTent extends Block {
 							{
 								if(a == 3)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 0, 2);
 								}
 								else
 									continue;
 							}
 							else if(b == 2)
 							{
-								if(a == 2 || a == 4)
+								if(a == 2)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 4)
+								{
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 3)
 								{
 									if(c == 0 || c == 4)
 									{
-										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -502,17 +530,21 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 1)
 							{
-								if(a == 1 || a == 5)
+								if(a == 1)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 5)
+								{
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 2 || a == 3 || a == 4)
 								{
 									if(c == 4)
-										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									if(a != 3)
 										if(c == 0)
-											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									else
 										continue;
 								}
@@ -521,18 +553,22 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 0)
 							{
-								if(a == 0 || a == 6)
+								if(a == 0)
 								{
-									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 6)
+								{
+									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else
 								{
 									if(a != 3)
 									{
 										if(c == 0)
-											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 										if(c == 4)
-											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -553,22 +589,26 @@ public class BlocksTent extends Block {
 							{
 								if(a == 3)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 0, 2);
 								}
 								else
 									continue;
 							}
 							else if(b == 2)
 							{
-								if(a == 2 || a == 4)
+								if(a == 2)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 4)
+								{
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 3)
 								{
 									if(c == 0 || c == 4)
 									{
-										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;
@@ -578,17 +618,21 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 1)
 							{
-								if(a == 1 || a == 5)
+								if(a == 1)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 5)
+								{
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else if(a == 2 || a == 3 || a == 4)
 								{
 									if(c == 0)
-										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									if(a != 3)
 										if(c == 4)
-											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									else
 										continue;
 								}
@@ -597,18 +641,22 @@ public class BlocksTent extends Block {
 							}
 							else if(b == 0)
 							{
-								if(a == 0 || a == 6)
+								if(a == 0)
 								{
-									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
+								}
+								if(a == 6)
+								{
+									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
 								else
 								{
 									if(a != 3)
 									{
 										if(c == 0)
-											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 										if(c == 4)
-											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, 0, 2);
+											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									}
 									else
 										continue;

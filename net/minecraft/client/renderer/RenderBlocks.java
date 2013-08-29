@@ -4350,7 +4350,7 @@ public class RenderBlocks
     
     public boolean renderBlockTentCloth(BlockTentCloth par1BlockTentCloth, int par2, int par3, int par4)
     {
-        int l = this.blockAccess.getHeight();
+    	int l = this.blockAccess.getBlockMetadata(par2, par3, par4);
         Tessellator tessellator = Tessellator.instance;
         tessellator.setBrightness(par1BlockTentCloth.getMixedBrightnessForBlock(this.blockAccess, par2, par3, par4));
         float f = 1.0F;
@@ -4384,29 +4384,6 @@ public class RenderBlocks
             icon = this.getBlockIconFromSideAndMetadata(par1BlockTentCloth, 0, j1);
         }
         
-        // UV values
-        double u0 = (double)icon.getMinU();
-        double u7 = (double)icon.getInterpolatedU(7.0D);
-        double u8 = (double)icon.getInterpolatedU(8.0D);
-        double u9 = (double)icon.getInterpolatedU(9.0D);
-        double u16 = (double)icon.getMaxU();
-        
-        double v0 = (double)icon.getMinV();
-        double v16 = (double)icon.getMaxV();
-        
-        // Offsets
-        double offset = 0.0625;
-        
-        // Vertex points
-        double   x = (double) par2;
-        double x15 = (double)(par2 + 1);
-        double   y = (double) par3;
-        double  y1 = (double)(par3 + offset);
-        double y15 = (double)(par3 + 1);
-        double   z = (double) par4;
-        double  z9 = (double)(par4 + (offset * 9));
-        double z15 = (double)(par4 + 1);
-        
         // Flags
         boolean N = par1BlockTentCloth.getBlock(this.blockAccess, par2, par3, par4, NORTH);
         boolean E = par1BlockTentCloth.getBlock(this.blockAccess, par2, par3, par4, EAST);
@@ -4415,58 +4392,262 @@ public class RenderBlocks
         boolean U = par1BlockTentCloth.getBlock(this.blockAccess, par2, par3, par4, UP);
         boolean D = par1BlockTentCloth.getBlock(this.blockAccess, par2, par3, par4, DOWN);
         
-        if(!W)
+        // West Facing Code
+        if(l >=4 && l <=7)
         {
-        	// Front
-            tessellator.addVertexWithUV(x15, y15,  z9,  u0,  v0);
-            tessellator.addVertexWithUV(  x,  y1,  z9, u16,  v0);
-            tessellator.addVertexWithUV(  x,   y,  z9, u16, v16);
-            tessellator.addVertexWithUV(x15,   y,  z9,  u0, v16);
-            // Top
-            tessellator.addVertexWithUV(x15, y15,  z9,  u0,  v0);
-            tessellator.addVertexWithUV(x15, y15,   z, u16,  v0);
-            tessellator.addVertexWithUV(  x,  y1,   z, u16, v16);
-            tessellator.addVertexWithUV(  x,  y1,  z9,  u0, v16);
-            // Left
-            tessellator.addVertexWithUV(  x,  y1,  z9,  u0,  v0);
-            tessellator.addVertexWithUV(  x,  y1,   z, u16,  v0);
-            tessellator.addVertexWithUV(  x,   y,   z, u16, v16);
-            tessellator.addVertexWithUV(  x,   y,  z9,  u0, v16);
+	        if(W)
+	        {
+	        	if(E)
+	        	{
+	        		if(l == 5)
+	        		{
+	        			// Right Center
+	        			double x1 = (double)(par2 + 0);
+	        			double y1 = (double)(par3 + 0);
+	        			double z1 = (double)(par4 + 1);
+	        			double x2 = (double)(par2 + 0);
+	        			double y2 = (double)(par3 + 0.875);
+	        			double z2 = (double)(par4 + 0);
+	        			double x3 = (double)(par2 + 1);
+	        			double y3 = (double)(par3 + 0.875);
+	        			double z3 = (double)(par4 + 0);
+	        			double x4 = (double)(par2 + 1);
+	        			double y4 = (double)(par3 + 0);
+	        			double z4 = (double)(par4 + 1);
+	        			double x5 = (double)(par2 + 0);
+	        			double y5 = (double)(par3 + 0.125);
+	        			double z5 = (double)(par4 + 1);
+	        			double x6 = (double)(par2 + 0);
+	        			double y6 = (double)(par3 + 1);
+	        			double z6 = (double)(par4 + 0);
+	        			double x7 = (double)(par2 + 1);
+	        			double y7 = (double)(par3 + 1);
+	        			double z7 = (double)(par4 + 0);
+	        			double x8 = (double)(par2 + 1);
+	        			double y8 = (double)(par3 + 0.125);
+	        			double z8 = (double)(par4 + 1);
+	        			double x9 = (double)(par2 + 0);
+	        			double y9 = (double)(par3 + 0.4375);
+	        			double z9 = (double)(par4 + 0.5);
+	        			double x10 = (double)(par2 + 1);
+	        			double y10 = (double)(par3 + 0.4375);
+	        			double z10 = (double)(par4 + 0.5);
+	        			double x11 = (double)(par2 + 0);
+	        			double y11 = (double)(par3 + 0.5625);
+	        			double z11 = (double)(par4 + 0.5);
+	        			double x12 = (double)(par2 + 1);
+	        			double y12 = (double)(par3 + 0.5625);
+	        			double z12 = (double)(par4 + 0.5);
 
-            return true;
+	        			double u1 = (double)icon.getMaxU();
+	        			double v1 = (double)icon.getInterpolatedV(10D);
+	        			double u2 = (double)icon.getMaxU();
+	        			double v2 = (double)icon.getMinV();
+	        			double u3 = (double)icon.getMinU();
+	        			double v3 = (double)icon.getMinV();
+	        			double u4 = (double)icon.getMinU();
+	        			double v4 = (double)icon.getInterpolatedV(10D);
+	        			double u5 = (double)icon.getInterpolatedU(8D);
+	        			double v5 = (double)icon.getInterpolatedV(9D);
+	        			double u6 = (double)icon.getInterpolatedU(8D);
+	        			double v6 = (double)icon.getInterpolatedV(7D);
+	        			double u7 = (double)icon.getMinU();
+	        			double v7 = (double)icon.getInterpolatedV(2D);
+	        			double u8 = (double)icon.getMaxU();
+	        			double v8 = (double)icon.getInterpolatedV(2D);
+	        			double u9 = (double)icon.getMinU();
+	        			double v9 = (double)icon.getInterpolatedV(14D);
+	        			double u10 = (double)icon.getMinU();
+	        			double v10 = (double)icon.getMaxV();
+	        			double u11 = (double)icon.getMaxU();
+	        			double v11 = (double)icon.getMaxV();
+	        			double u12 = (double)icon.getMaxU();
+	        			double v12 = (double)icon.getInterpolatedV(6D);
+	        			double u13 = (double)icon.getMinU();
+	        			double v13 = (double)icon.getInterpolatedV(6D);
+	        			double u14 = (double)icon.getMaxU();
+	        			double v14 = (double)icon.getInterpolatedV(14D);
+	        			
+	        			tessellator.addVertexWithUV(x9, y9, z9, u1, v1);
+	        			tessellator.addVertexWithUV(x2, y2, z2, u2, v2);
+	        			tessellator.addVertexWithUV(x3, y3, z3, u3, v3);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u4, v4);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u4, v4);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u1, v1);
+	        			tessellator.addVertexWithUV(x7, y7, z7, u2, v2);
+	        			tessellator.addVertexWithUV(x6, y6, z6, u3, v3);
+	        			tessellator.addVertexWithUV(x9, y9, z9, u5, v5);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u6, v6);
+	        			tessellator.addVertexWithUV(x6, y6, z6, u3, v3);
+	        			tessellator.addVertexWithUV(x2, y2, z2, u7, v7);
+	        			tessellator.addVertexWithUV(x2, y2, z2, u8, v8);
+	        			tessellator.addVertexWithUV(x6, y6, z6, u2, v2);
+	        			tessellator.addVertexWithUV(x7, y7, z7, u3, v3);
+	        			tessellator.addVertexWithUV(x3, y3, z3, u7, v7);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u5, v5);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u6, v6);
+	        			tessellator.addVertexWithUV(x8, y8, z8, u9, v9);
+	        			tessellator.addVertexWithUV(x4, y4, z4, u10, v10);
+	        			tessellator.addVertexWithUV(x5, y5, z5, u3, v3);
+	        			tessellator.addVertexWithUV(x1, y1, z1, u7, v7);
+	        			tessellator.addVertexWithUV(x4, y4, z4, u8, v8);
+	        			tessellator.addVertexWithUV(x8, y8, z8, u2, v2);
+	        			tessellator.addVertexWithUV(x1, y1, z1, u11, v11);
+	        			tessellator.addVertexWithUV(x9, y9, z9, u12, v12);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u13, v13);
+	        			tessellator.addVertexWithUV(x4, y4, z4, u10, v10);
+	        			tessellator.addVertexWithUV(x5, y5, z5, u10, v10);
+	        			tessellator.addVertexWithUV(x8, y8, z8, u11, v11);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u12, v12);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u13, v13);
+	        			tessellator.addVertexWithUV(x1, y1, z1, u11, v11);
+	        			tessellator.addVertexWithUV(x5, y5, z5, u14, v14);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u6, v6);
+	        			tessellator.addVertexWithUV(x9, y9, z9, u5, v5);
+	        			tessellator.addVertexWithUV(x3, y3, z3, u8, v8);
+	        			tessellator.addVertexWithUV(x7, y7, z7, u2, v2);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u6, v6);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u5, v5);
+
+			        	return true;
+	        		}
+	        		else if(l == 6)
+	        		{
+	        			// Left Center
+	        			double x1 = (double)(par2 + 1);
+	        			double y1 = (double)(par3 + 0);
+	        			double z1 = (double)(par4 + 0);
+	        			double x2 = (double)(par2 + 1);
+	        			double y2 = (double)(par3 + 0.875);
+	        			double z2 = (double)(par4 + 1);
+	        			double x3 = (double)(par2 + 0);
+	        			double y3 = (double)(par3 + 0.875);
+	        			double z3 = (double)(par4 + 1);
+	        			double x4 = (double)(par2 + 0);
+	        			double y4 = (double)(par3 + 0);
+	        			double z4 = (double)(par4 + 0);
+	        			double x5 = (double)(par2 + 1);
+	        			double y5 = (double)(par3 + 0.125);
+	        			double z5 = (double)(par4 + 0);
+	        			double x6 = (double)(par2 + 1);
+	        			double y6 = (double)(par3 + 1);
+	        			double z6 = (double)(par4 + 1);
+	        			double x7 = (double)(par2 + 0);
+	        			double y7 = (double)(par3 + 1);
+	        			double z7 = (double)(par4 + 1);
+	        			double x8 = (double)(par2 + 0);
+	        			double y8 = (double)(par3 + 0.125);
+	        			double z8 = (double)(par4 + 0);
+	        			double x9 = (double)(par2 + 1);
+	        			double y9 = (double)(par3 + 0.4375);
+	        			double z9 = (double)(par4 + 0.5);
+	        			double x10 = (double)(par2 + 0);
+	        			double y10 = (double)(par3 + 0.4375);
+	        			double z10 = (double)(par4 + 0.5);
+	        			double x11 = (double)(par2 + 1);
+	        			double y11 = (double)(par3 + 0.5625);
+	        			double z11 = (double)(par4 + 0.5);
+	        			double x12 = (double)(par2 + 0);
+	        			double y12 = (double)(par3 + 0.5625);
+	        			double z12 = (double)(par4 + 0.5);
+
+	        			double u1 = (double)icon.getMaxU();
+	        			double v1 = (double)icon.getInterpolatedV(10D);
+	        			double u2 = (double)icon.getMaxU();
+	        			double v2 = (double)icon.getMinV();
+	        			double u3 = (double)icon.getMinU();
+	        			double v3 = (double)icon.getMinV();
+	        			double u4 = (double)icon.getMinU();
+	        			double v4 = (double)icon.getInterpolatedV(10D);
+	        			double u5 = (double)icon.getInterpolatedU(8D);
+	        			double v5 = (double)icon.getInterpolatedV(9D);
+	        			double u6 = (double)icon.getInterpolatedU(8D);
+	        			double v6 = (double)icon.getInterpolatedV(7D);
+	        			double u7 = (double)icon.getMinU();
+	        			double v7 = (double)icon.getInterpolatedV(2D);
+	        			double u8 = (double)icon.getMaxU();
+	        			double v8 = (double)icon.getInterpolatedV(2D);
+	        			double u9 = (double)icon.getMinU();
+	        			double v9 = (double)icon.getInterpolatedV(14D);
+	        			double u10 = (double)icon.getMinU();
+	        			double v10 = (double)icon.getMaxV();
+	        			double u11 = (double)icon.getMaxU();
+	        			double v11 = (double)icon.getMaxV();
+	        			double u12 = (double)icon.getMaxU();
+	        			double v12 = (double)icon.getInterpolatedV(6D);
+	        			double u13 = (double)icon.getMinU();
+	        			double v13 = (double)icon.getInterpolatedV(6D);
+	        			double u14 = (double)icon.getMaxU();
+	        			double v14 = (double)icon.getInterpolatedV(14D);
+
+	        			tessellator.addVertexWithUV(x9, y9, z9, u1, v1);
+	        			tessellator.addVertexWithUV(x2, y2, z2, u2, v2);
+	        			tessellator.addVertexWithUV(x3, y3, z3, u3, v3);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u4, v4);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u4, v4);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u1, v1);
+	        			tessellator.addVertexWithUV(x7, y7, z7, u2, v2);
+	        			tessellator.addVertexWithUV(x6, y6, z6, u3, v3);
+	        			tessellator.addVertexWithUV(x9, y9, z9, u5, v5);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u6, v6);
+	        			tessellator.addVertexWithUV(x6, y6, z6, u3, v3);
+	        			tessellator.addVertexWithUV(x2, y2, z2, u7, v7);
+	        			tessellator.addVertexWithUV(x2, y2, z2, u8, v8);
+	        			tessellator.addVertexWithUV(x6, y6, z6, u2, v2);
+	        			tessellator.addVertexWithUV(x7, y7, z7, u3, v3);
+	        			tessellator.addVertexWithUV(x3, y3, z3, u7, v7);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u5, v5);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u6, v6);
+	        			tessellator.addVertexWithUV(x8, y8, z8, u9, v9);
+	        			tessellator.addVertexWithUV(x4, y4, z4, u10, v10);
+	        			tessellator.addVertexWithUV(x5, y5, z5, u3, v3);
+	        			tessellator.addVertexWithUV(x1, y1, z1, u7, v7);
+	        			tessellator.addVertexWithUV(x4, y4, z4, u8, v8);
+	        			tessellator.addVertexWithUV(x8, y8, z8, u2, v2);
+	        			tessellator.addVertexWithUV(x1, y1, z1, u11, v11);
+	        			tessellator.addVertexWithUV(x9, y9, z9, u12, v12);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u13, v13);
+	        			tessellator.addVertexWithUV(x4, y4, z4, u10, v10);
+	        			tessellator.addVertexWithUV(x5, y5, z5, u10, v10);
+	        			tessellator.addVertexWithUV(x8, y8, z8, u11, v11);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u12, v12);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u13, v13);
+	        			tessellator.addVertexWithUV(x1, y1, z1, u11, v11);
+	        			tessellator.addVertexWithUV(x5, y5, z5, u14, v14);
+	        			tessellator.addVertexWithUV(x11, y11, z11, u6, v6);
+	        			tessellator.addVertexWithUV(x9, y9, z9, u5, v5);
+	        			tessellator.addVertexWithUV(x3, y3, z3, u8, v8);
+	        			tessellator.addVertexWithUV(x7, y7, z7, u2, v2);
+	        			tessellator.addVertexWithUV(x12, y12, z12, u6, v6);
+	        			tessellator.addVertexWithUV(x10, y10, z10, u5, v5);
+	        			
+			        	return true;
+	        		}
+	        		else
+	        		{
+	        			// Ridge
+	        		}
+	        	}
+	        	else
+	        	{
+	        		// Right Front
+	        		
+	        		return true;
+	        	}
+	        }
+	        else if(E)
+	        {
+	        	// Right Back
+	        	
+	        	return true;
+	        }
+	        else if(N && S && U )
+	        {
+	        	// Other Blocks
+	        	
+	        	return true;
+	        }
         }
-        // Full Cube
-     // Front
-        tessellator.addVertexWithUV(x15, y15, z15,  u0,  v0);
-        tessellator.addVertexWithUV(  x, y15, z15, u16,  v0);
-        tessellator.addVertexWithUV(  x,   y, z15, u16, v16);
-        tessellator.addVertexWithUV(x15,   y, z15,  u0, v16);
-        // Back
-        tessellator.addVertexWithUV(  x, y15,   z,  u0,  v0);
-        tessellator.addVertexWithUV(x15, y15,   z, u16,  v0);
-        tessellator.addVertexWithUV(x15,   y,   z, u16, v16);
-        tessellator.addVertexWithUV(  x,   y,   z,  u0, v16);
-        // Top
-        tessellator.addVertexWithUV(x15, y15,   z,  u0,  v0);
-        tessellator.addVertexWithUV(  x, y15,   z, u16,  v0);
-        tessellator.addVertexWithUV(  x, y15, z15, u16, v16);
-        tessellator.addVertexWithUV(x15, y15, z15,  u0, v16);
-        // Bottom
-        tessellator.addVertexWithUV(  x,   y,   z,  u0,  v0);
-        tessellator.addVertexWithUV(x15,   y,   z, u16,  v0);
-        tessellator.addVertexWithUV(x15,   y, z15, u16, v16);
-        tessellator.addVertexWithUV(  x,   y, z15,  u0, v16);
-        // Left
-        tessellator.addVertexWithUV(  x, y15, z15,  u0,  v0);
-        tessellator.addVertexWithUV(  x, y15,   z, u16,  v0);
-        tessellator.addVertexWithUV(  x,   y,   z, u16, v16);
-        tessellator.addVertexWithUV(  x,   y, z15,  u0, v16);
-        // Right
-        tessellator.addVertexWithUV(x15, y15,   z,  u0,  v0);
-        tessellator.addVertexWithUV(x15, y15, z15, u16,  v0);
-        tessellator.addVertexWithUV(x15,   y, z15, u16, v16);
-        tessellator.addVertexWithUV(x15,   y,   z,  u0, v16);
-
         return true;
     }
     
