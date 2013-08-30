@@ -1,7 +1,5 @@
 package net.minecraft.client.renderer;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -65,11 +64,15 @@ import net.minecraft.util.ReportedException;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.IWorldAccess;
+import net.minecraftforge.client.IRenderHandler;
+import net.minecraftforge.client.MinecraftForgeClient;
+
 import org.lwjgl.opengl.ARBOcclusionQuery;
 import org.lwjgl.opengl.GL11;
 
-import net.minecraftforge.client.IRenderHandler;
-import net.minecraftforge.client.MinecraftForgeClient;
+import bms.EntityTrailFX;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderGlobal implements IWorldAccess
@@ -1921,6 +1924,36 @@ public class RenderGlobal implements IWorldAccess
             else if (par1Str.equals("fireworksSpark"))
             {
                 this.mc.effectRenderer.addEffect(entityfx = new EntityFireworkSparkFX(this.theWorld, par2, par4, par6, par8, par10, par12, this.mc.effectRenderer));
+            }
+            else if(par1Str.equals("fireRuneTrail")){
+            	entityfx = new EntityTrailFX(this.theWorld, par2, par4, par6, par8, par10, par12);
+            	((EntityFX)entityfx).setRBGColorF(((EntityFX)entityfx).getRedColorF() * 1f, 0f, 0f);
+                ((EntityFX)entityfx).nextTextureIndexX();
+            	this.mc.effectRenderer.addEffect(entityfx);
+            }
+            else if(par1Str.equals("waterRuneTrail")){
+            	entityfx = new EntityTrailFX(this.theWorld, par2, par4, par6, par8, par10, par12);
+            	((EntityFX)entityfx).setRBGColorF(0f, 0f, ((EntityFX)entityfx).getBlueColorF() * 1f);
+                ((EntityFX)entityfx).nextTextureIndexX();
+            	this.mc.effectRenderer.addEffect(entityfx);
+            }
+            else if(par1Str.equals("iceRuneTrail")){
+            	entityfx = new EntityTrailFX(this.theWorld, par2, par4, par6, par8, par10, par12);
+            	((EntityFX)entityfx).setRBGColorF(0.6549019607843137f, 0.9215686274509804f, 1.0f);
+                ((EntityFX)entityfx).nextTextureIndexX();
+            	this.mc.effectRenderer.addEffect(entityfx);
+            }
+            else if(par1Str.equals("earthRuneTrail")){
+            	entityfx = new EntityTrailFX(this.theWorld, par2, par4, par6, par8, par10, par12);
+            	((EntityFX)entityfx).setRBGColorF(0f, ((EntityFX)entityfx).getGreenColorF() * 1f, 0f);
+                ((EntityFX)entityfx).nextTextureIndexX();
+            	this.mc.effectRenderer.addEffect(entityfx);
+            }
+            else if(par1Str.equals("citrineRuneTrail")){
+            	entityfx = new EntityTrailFX(this.theWorld, par2, par4, par6, par8, par10, par12);
+            	((EntityFX)entityfx).setRBGColorF(1.0f, 0.6509803921568627f, 0.1843137254901961f);
+                ((EntityFX)entityfx).nextTextureIndexX();
+            	this.mc.effectRenderer.addEffect(entityfx);
             }
 
             if (entityfx != null)

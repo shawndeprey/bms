@@ -74,6 +74,19 @@ public class ItemsBMS {
     public static ItemStack titaniumSwordStack;
     public static ItemStack adamantiumSwordStack;
     
+    // Magic
+	public static Item fireStaff;
+	public static Item waterStaff;
+	public static Item iceStaff;
+	public static Item earthStaff;
+	public static Item citrineStaff;
+	public static Item fireRune;
+	public static Item waterRune;
+	public static Item iceRune;
+	public static Item earthRune;
+	public static Item citrineRune;
+	public static Item blankItem;
+    
     public static boolean initItems()
     {
     	// Items
@@ -106,6 +119,19 @@ public class ItemsBMS {
     	// Weapons
     	titaniumSword = 					(new ItemSword(9019, EnumBMS.TITANIUM)).setUnlocalizedName("titaniumSword").setCreativeTab(CreativeTabs.tabCombat).func_111206_d("bms:titaniumSword");
     	adamantiumSword = 					(new ItemSword(9020, EnumBMS.ADAMANTIUM)).setUnlocalizedName("adamantiumSword").setCreativeTab(CreativeTabs.tabCombat).func_111206_d("bms:adamantiumSword");
+    	
+    	// Staves
+    	fireStaff = new ItemStaff(9023, 0).setUnlocalizedName("fireStaff").func_111206_d("bms:fireStaff");
+    	waterStaff = new ItemStaff(9024, 1).setUnlocalizedName("waterStaff").func_111206_d("bms:waterStaff");
+    	iceStaff = new ItemStaff(9025, 2).setUnlocalizedName("iceStaff").func_111206_d("bms:iceStaff");
+    	earthStaff = new ItemStaff(9026, 3).setUnlocalizedName("earthStaff").func_111206_d("bms:earthStaff");
+    	citrineStaff = new ItemStaff(9027, 4).setUnlocalizedName("citrineStaff").func_111206_d("bms:citrineStaff");
+    	fireRune = new Item(9028).setUnlocalizedName("fireRune").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:fireRune");
+    	waterRune = new Item(9029).setUnlocalizedName("waterRune").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:waterRune");
+    	iceRune = new Item(9030).setUnlocalizedName("iceRune").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:iceRune");
+    	earthRune = new Item(9031).setUnlocalizedName("earthRune").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:earthRune");
+    	citrineRune = new Item(9032).setUnlocalizedName("citrineRune").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:citrineRune");
+    	blankItem = new Item(9033).setUnlocalizedName("blankItem").func_111206_d("bms:blankItem");
     	
     	return true;
     }
@@ -193,6 +219,29 @@ public class ItemsBMS {
 	    	LanguageRegistry.addName(slingshot, "Slingshot");
 	    GameRegistry.registerItem(pebble, "pebble");
 	    	LanguageRegistry.addName(pebble, "Pebble");
+	    	
+	    // Staves
+        GameRegistry.registerItem(fireStaff, "fireStaff");
+	    	LanguageRegistry.addName(fireStaff, "Fire Staff");
+	    GameRegistry.registerItem(fireRune, "fireRune");
+	    	LanguageRegistry.addName(fireRune, "Fire Rune");
+	    GameRegistry.registerItem(waterStaff, "waterStaff");
+	    	LanguageRegistry.addName(waterStaff, "Water Staff");
+	    GameRegistry.registerItem(waterRune, "waterRune");
+	    	LanguageRegistry.addName(waterRune, "Water Rune");
+	    GameRegistry.registerItem(iceStaff, "iceStaff");
+	    	LanguageRegistry.addName(iceStaff, "Ice Staff");
+	    GameRegistry.registerItem(iceRune, "iceRune");
+	    	LanguageRegistry.addName(iceRune, "Ice Rune");
+	    GameRegistry.registerItem(earthStaff, "Earth Staff");
+	    	LanguageRegistry.addName(earthStaff, "earthStaff");
+	    GameRegistry.registerItem(earthRune, "Earth Rune");
+	    	LanguageRegistry.addName(earthRune, "Earth Rune");
+	    GameRegistry.registerItem(citrineStaff, "citrineStaff");
+	    	LanguageRegistry.addName(citrineStaff, "Citrine Staff");
+	    GameRegistry.registerItem(citrineRune, "citrineRune");
+	    	LanguageRegistry.addName(citrineRune, "Citrine Rune");
+	    GameRegistry.registerItem(blankItem, "blankItem");
 	    	
     	return true;
 	}
