@@ -33,9 +33,16 @@ public class BlocksTent extends Block {
         }
         else
         {
-        	int dir = getDirection(Math.abs((int)par5EntityPlayer.rotationYaw));
-        	if(checkTent(par1World, x, y, z, dir))
-        		buildTent(par1World, x, y, z, dir);
+        	if(par1World.getBlockMetadata(x, y, z) == 0)
+        	{
+        		int dir = getDirection(Math.abs((int)par5EntityPlayer.rotationYaw));
+            	if(checkTent(par1World, x, y, z, dir))
+            	{
+            		par1World.setBlockMetadataWithNotify(x, y, z, 1, 2);
+            		buildTent(par1World, x, y, z, dir);
+            	}
+            	
+        	}
         	
 	        return false;
         }
@@ -46,7 +53,7 @@ public class BlocksTent extends Block {
 		return Math.round((float)(((direction + 45) % 360) / 90));
 	}
 	
-	public boolean checkTent(World world, int x, int y, int z, int direction)
+	private boolean checkTent(World world, int x, int y, int z, int direction)
 	{
 		boolean check = true;
 		switch(direction)
@@ -282,7 +289,6 @@ public class BlocksTent extends Block {
 						}
 					}
 				}
-			System.out.println("Check West: " + check);
 			break;
 			default:
 			break;
@@ -290,7 +296,7 @@ public class BlocksTent extends Block {
 		return check;
 	}
 	
-	public boolean checkBlock(World world, int x, int y, int z)
+	private boolean checkBlock(World world, int x, int y, int z)
 	{
 		boolean value = true;
 			if(world.getBlockId(x, y, z) != 0 &&	// Air
@@ -310,7 +316,7 @@ public class BlocksTent extends Block {
 		return value;
 	}
 	
-	public void buildTent(World world, int x, int y, int z, int direction)
+	private void buildTent(World world, int x, int y, int z, int direction)
 	{
 		switch(direction)
 		{
@@ -336,7 +342,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 4)
+								else if(a == 4)
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -358,7 +364,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 5)
+								else if(a == 5)
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -381,7 +387,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 6)
+								else if(a == 6)
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -424,7 +430,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 4)
+								else if(a == 4)
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -446,7 +452,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 5)
+								else if(a == 5)
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -469,7 +475,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 6)
+								else if(a == 6)
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -512,7 +518,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 4)
+								else if(a == 4)
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -534,7 +540,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 5)
+								else if(a == 5)
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -557,7 +563,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 6)
+								else if(a == 6)
 								{
 									world.setBlock(i, j, k, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -600,7 +606,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 4)
+								else if(a == 4)
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -622,7 +628,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 5)
+								else if(a == 5)
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -645,7 +651,7 @@ public class BlocksTent extends Block {
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 2, 2);
 								}
-								if(a == 6)
+								else if(a == 6)
 								{
 									world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 1, 2);
 								}
@@ -671,4 +677,9 @@ public class BlocksTent extends Block {
 		}
 	}
 
+	public int onBlockPlaced(World par1World, int par2, int par3, int par4, int par5, float par6, float par7, float par8, int par9)
+    {
+		par1World.setBlockMetadataWithNotify(par2, par3, par4, 0, 2);
+        return par1World.getBlockMetadata(par2, par3, par4);
+    }
 }
