@@ -7,6 +7,11 @@ public class RenderBMS {
 	public static boolean registerRenderers()
 	{
 		RenderingRegistry.registerEntityRenderingHandler(EntityPebble.class, new RenderSnowball(ItemsBMS.pebble));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFireRune.class, new RenderSnowball(ItemsBMS.blankItem));
+		RenderingRegistry.registerEntityRenderingHandler(EntityWaterRune.class, new RenderSnowball(ItemsBMS.blankItem));
+		RenderingRegistry.registerEntityRenderingHandler(EntityIceRune.class, new RenderSnowball(ItemsBMS.blankItem));
+		RenderingRegistry.registerEntityRenderingHandler(EntityEarthRune.class, new RenderSnowball(ItemsBMS.blankItem));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCitrineRune.class, new RenderSnowball(ItemsBMS.blankItem));
 		
 		return true;
 	}
