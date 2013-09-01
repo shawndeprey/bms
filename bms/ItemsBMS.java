@@ -1,12 +1,7 @@
 package bms;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockOreStorage;
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemHoe;
@@ -14,7 +9,10 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ItemsBMS {
 	// Items
@@ -73,6 +71,24 @@ public class ItemsBMS {
     public static ItemStack adamantiumHoeStack;
     public static ItemStack titaniumSwordStack;
     public static ItemStack adamantiumSwordStack;
+    public static ItemStack linenHelmetStack;
+    public static ItemStack linenChestStack;
+    public static ItemStack linenPantsStack;
+    public static ItemStack linenBootsStack;
+    public static ItemStack reinforcedLeatherHelmetStack;
+    public static ItemStack reinforcedLeatherChestStack;
+    public static ItemStack reinforcedLeatherPantsStack;
+    public static ItemStack reinforcedLeatherBootsStack;
+    public static ItemStack titaniumHelmetStack;
+    public static ItemStack titaniumChestStack;
+    public static ItemStack titaniumPantsStack;
+    public static ItemStack titaniumBootsStack;
+    public static ItemStack adamantiumHelmetStack;
+    public static ItemStack adamantiumChestStack;
+    public static ItemStack adamantiumPantsStack;
+    public static ItemStack adamantiumBootsStack;
+    public static ItemStack linenStack;
+    public static ItemStack reinforcedLeatherStack;
     
     // Magic
 	public static Item fireStaff;
@@ -86,6 +102,28 @@ public class ItemsBMS {
 	public static Item earthRune;
 	public static Item citrineRune;
 	public static Item blankItem;
+	
+	// Armor
+	public static Item linenHelmet;
+	public static Item linenChest;
+	public static Item linenPants;
+	public static Item linenBoots;
+	public static Item reinforcedLeatherHelmet;
+	public static Item reinforcedLeatherChest;
+	public static Item reinforcedLeatherPants;
+	public static Item reinforcedLeatherBoots;
+	public static Item titaniumHelmet;
+	public static Item titaniumChest;
+	public static Item titaniumPants;
+	public static Item titaniumBoots;
+	public static Item adamantiumHelmet;
+	public static Item adamantiumChest;
+	public static Item adamantiumPants;
+	public static Item adamantiumBoots;
+	
+	public static Item linen;
+	public static Item reinforcedLeather;
+	public static Item flaxFiber;
     
     public static boolean initItems()
     {
@@ -133,6 +171,28 @@ public class ItemsBMS {
     	citrineRune = new Item(9032).setUnlocalizedName("citrineRune").setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bms:citrineRune");
     	blankItem = new Item(9033).setUnlocalizedName("blankItem").func_111206_d("bms:blankItem");
     	
+    	// Armor reinforced
+    	linenHelmet = new ItemBMSArmor(9034, EnumBMS.linenArmorMaterial, ModLoader.addArmor("linen"), 0, "linen").setUnlocalizedName("linenHelmet").func_111206_d("bms:linenHelmet").setCreativeTab(CreativeTabs.tabCombat);
+    	linenChest = new ItemBMSArmor(9035, EnumBMS.linenArmorMaterial, ModLoader.addArmor("linen"), 1, "linen").setUnlocalizedName("linenChest").func_111206_d("bms:linenChest").setCreativeTab(CreativeTabs.tabCombat);
+    	linenPants = new ItemBMSArmor(9036, EnumBMS.linenArmorMaterial, ModLoader.addArmor("linen"), 2, "linen").setUnlocalizedName("linenPants").func_111206_d("bms:linenPants").setCreativeTab(CreativeTabs.tabCombat);
+    	linenBoots = new ItemBMSArmor(9037, EnumBMS.linenArmorMaterial, ModLoader.addArmor("linen"), 3, "linen").setUnlocalizedName("linenBoots").func_111206_d("bms:linenBoots").setCreativeTab(CreativeTabs.tabCombat);
+    	reinforcedLeatherHelmet = new ItemBMSArmor(9038, EnumBMS.reinforcedLeatherArmorMaterial, ModLoader.addArmor("reinforcedLeather"), 0, "reinforcedLeather").setUnlocalizedName("reinforcedLeatherHelmet").func_111206_d("bms:reinforcedLeatherHelmet").setCreativeTab(CreativeTabs.tabCombat);
+    	reinforcedLeatherChest = new ItemBMSArmor(9039, EnumBMS.reinforcedLeatherArmorMaterial, ModLoader.addArmor("reinforcedLeather"), 1, "reinforcedLeather").setUnlocalizedName("reinforcedLeatherChest").func_111206_d("bms:reinforcedLeatherChest").setCreativeTab(CreativeTabs.tabCombat);
+    	reinforcedLeatherPants = new ItemBMSArmor(9040, EnumBMS.reinforcedLeatherArmorMaterial, ModLoader.addArmor("reinforcedLeather"), 2, "reinforcedLeather").setUnlocalizedName("reinforcedLeatherPants").func_111206_d("bms:reinforcedLeatherPants").setCreativeTab(CreativeTabs.tabCombat);
+    	reinforcedLeatherBoots = new ItemBMSArmor(9041, EnumBMS.reinforcedLeatherArmorMaterial, ModLoader.addArmor("reinforcedLeather"), 3, "reinforcedLeather").setUnlocalizedName("reinforcedLeatherBoots").func_111206_d("bms:reinforcedLeatherBoots").setCreativeTab(CreativeTabs.tabCombat);
+    	titaniumHelmet = new ItemBMSArmor(9042, EnumBMS.titaniumArmorMaterial, ModLoader.addArmor("titanium"), 0, "titanium").setUnlocalizedName("titaniumHelmet").func_111206_d("bms:titaniumHelmet").setCreativeTab(CreativeTabs.tabCombat);
+    	titaniumChest = new ItemBMSArmor(9043, EnumBMS.titaniumArmorMaterial, ModLoader.addArmor("titanium"), 1, "titanium").setUnlocalizedName("titaniumChest").func_111206_d("bms:titaniumChest").setCreativeTab(CreativeTabs.tabCombat);
+    	titaniumPants = new ItemBMSArmor(9044, EnumBMS.titaniumArmorMaterial, ModLoader.addArmor("titanium"), 2, "titanium").setUnlocalizedName("titaniumPants").func_111206_d("bms:titaniumPants").setCreativeTab(CreativeTabs.tabCombat);
+    	titaniumBoots = new ItemBMSArmor(9045, EnumBMS.titaniumArmorMaterial, ModLoader.addArmor("titanium"), 3, "titanium").setUnlocalizedName("titaniumBoots").func_111206_d("bms:titaniumBoots").setCreativeTab(CreativeTabs.tabCombat);
+    	adamantiumHelmet = new ItemBMSArmor(9046, EnumBMS.adamantiumArmorMaterial, ModLoader.addArmor("adamantium"), 0, "adamantium").setUnlocalizedName("adamantiumHelmet").func_111206_d("bms:adamantiumHelmet").setCreativeTab(CreativeTabs.tabCombat);
+    	adamantiumChest = new ItemBMSArmor(9047, EnumBMS.adamantiumArmorMaterial, ModLoader.addArmor("adamantium"), 1, "adamantium").setUnlocalizedName("adamantiumChest").func_111206_d("bms:adamantiumChest").setCreativeTab(CreativeTabs.tabCombat);
+    	adamantiumPants = new ItemBMSArmor(9048, EnumBMS.adamantiumArmorMaterial, ModLoader.addArmor("adamantium"), 2, "adamantium").setUnlocalizedName("adamantiumPants").func_111206_d("bms:adamantiumPants").setCreativeTab(CreativeTabs.tabCombat);
+    	adamantiumBoots = new ItemBMSArmor(9049, EnumBMS.adamantiumArmorMaterial, ModLoader.addArmor("adamantium"), 3, "adamantium").setUnlocalizedName("adamantiumBoots").func_111206_d("bms:adamantiumBoots").setCreativeTab(CreativeTabs.tabCombat);
+    	
+    	linen =	new Item(9050).setUnlocalizedName("linen").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:linen");
+    	reinforcedLeather =	new Item(9051).setUnlocalizedName("reinforcedLeather").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:reinforcedLeather");
+    	flaxFiber = new Item(9052).setUnlocalizedName("flaxFiber").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:flaxFiber");
+    	
     	return true;
     }
     
@@ -162,7 +222,24 @@ public class ItemsBMS {
         adamantiumHoeStack = 				new ItemStack(adamantiumHoe);
         titaniumSwordStack = 				new ItemStack(titaniumSword);
         adamantiumSwordStack = 				new ItemStack(adamantiumSword);
-        
+        linenHelmetStack = 					new ItemStack(linenHelmet);
+        linenChestStack = 					new ItemStack(linenChest);
+        linenPantsStack = 					new ItemStack(linenPants);
+        linenBootsStack = 					new ItemStack(linenBoots);
+        reinforcedLeatherHelmetStack = 		new ItemStack(reinforcedLeatherHelmet);
+        reinforcedLeatherChestStack = 		new ItemStack(reinforcedLeatherChest);
+        reinforcedLeatherPantsStack = 		new ItemStack(reinforcedLeatherPants);
+        reinforcedLeatherBootsStack = 		new ItemStack(reinforcedLeatherBoots);
+        titaniumHelmetStack = 				new ItemStack(titaniumHelmet);
+        titaniumChestStack = 				new ItemStack(titaniumChest);
+        titaniumPantsStack = 				new ItemStack(titaniumPants);
+        titaniumBootsStack = 				new ItemStack(titaniumBoots);
+        adamantiumHelmetStack = 			new ItemStack(adamantiumHelmet);
+        adamantiumChestStack = 				new ItemStack(adamantiumChest);
+        adamantiumPantsStack = 				new ItemStack(adamantiumPants);
+        adamantiumBootsStack = 				new ItemStack(adamantiumBoots);
+        linenStack = 						new ItemStack(linen);
+        reinforcedLeatherStack = 			new ItemStack(reinforcedLeather);
         return true;
 	}
 	
@@ -242,6 +319,48 @@ public class ItemsBMS {
 	    GameRegistry.registerItem(citrineRune, "citrineRune");
 	    	LanguageRegistry.addName(citrineRune, "Citrine Rune");
 	    GameRegistry.registerItem(blankItem, "blankItem");
+	    
+	    // Armor
+	    GameRegistry.registerItem(linenHelmet, "linenHelmet");
+			LanguageRegistry.addName(linenHelmet, "Wizard Hat");
+		GameRegistry.registerItem(linenChest, "linenChest");
+			LanguageRegistry.addName(linenChest, "Wizard Robe");
+		GameRegistry.registerItem(linenPants, "linenPants");
+			LanguageRegistry.addName(linenPants, "Wizard Legs");
+		GameRegistry.registerItem(linenBoots, "linenBoots");
+			LanguageRegistry.addName(linenBoots, "Wizard Boots");
+		GameRegistry.registerItem(reinforcedLeatherHelmet, "reinforcedLeatherHelmet");
+			LanguageRegistry.addName(reinforcedLeatherHelmet, "Reinforced Leather Helmet");
+		GameRegistry.registerItem(reinforcedLeatherChest, "reinforcedLeatherChest");
+			LanguageRegistry.addName(reinforcedLeatherChest, "Reinforced Leather Chest");
+		GameRegistry.registerItem(reinforcedLeatherPants, "reinforcedLeatherPants");
+			LanguageRegistry.addName(reinforcedLeatherPants, "Reinforced Leather Pants");
+		GameRegistry.registerItem(reinforcedLeatherBoots, "reinforcedLeatherBoots");
+			LanguageRegistry.addName(reinforcedLeatherBoots, "Reinforced Leather Boots");
+	    GameRegistry.registerItem(titaniumHelmet, "titaniumHelmet");
+    		LanguageRegistry.addName(titaniumHelmet, "Titanium Helmet");
+    	GameRegistry.registerItem(titaniumChest, "titaniumChest");
+    		LanguageRegistry.addName(titaniumChest, "Titanium Chestplate");
+    	GameRegistry.registerItem(titaniumPants, "titaniumPants");
+    		LanguageRegistry.addName(titaniumPants, "Titanium Legs");
+    	GameRegistry.registerItem(titaniumBoots, "titaniumBoots");
+    		LanguageRegistry.addName(titaniumBoots, "Titanium Boots");
+    	GameRegistry.registerItem(adamantiumHelmet, "adamantiumHelmet");
+    		LanguageRegistry.addName(adamantiumHelmet, "Adamantium Helmet");
+    	GameRegistry.registerItem(adamantiumChest, "adamantiumChest");
+    		LanguageRegistry.addName(adamantiumChest, "Adamantium Chestplate");
+    	GameRegistry.registerItem(adamantiumPants, "adamantiumPants");
+    		LanguageRegistry.addName(adamantiumPants, "Adamantium Legs");
+    	GameRegistry.registerItem(adamantiumBoots, "adamantiumBoots");
+    		LanguageRegistry.addName(adamantiumBoots, "Adamantium Boots");
+    	
+    	GameRegistry.registerItem(linen, "linen");
+    		LanguageRegistry.addName(linen, "Linen");
+    	GameRegistry.registerItem(reinforcedLeather, "reinforcedLeather");
+    		LanguageRegistry.addName(reinforcedLeather, "Reinforced Leather");
+    	GameRegistry.registerItem(flaxFiber, "flaxFiber");
+    		LanguageRegistry.addName(flaxFiber, "Flax Fibers");
+    		
 	    	
     	return true;
 	}

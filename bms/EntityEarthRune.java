@@ -28,11 +28,18 @@ public class EntityEarthRune extends EntityRune {
 		for(int x = (int)this.posX - 5; x < (int)this.posX + 5; x++){
     		for(int y = (int)this.posY - 5; y < (int)this.posY + 5; y++){
     			for(int z = (int)this.posZ - 5; z < (int)this.posZ + 5; z++){
-    				
+    				if(worldObj.getBlockId(x, y, z) == Block.cobblestone.blockID){
+    					worldObj.setBlock(x, y, z, Block.cobblestoneMossy.blockID, 0, 2);
+    				}
+    				if(worldObj.getBlockId(x, y, z) == Block.stoneBrick.blockID){
+    					worldObj.setBlock(x, y, z, Block.stoneBrick.blockID, 1, 2);
+    				}
+    				if(worldObj.getBlockId(x, y, z) == Block.cobblestoneWall.blockID){
+    					worldObj.setBlock(x, y, z, Block.cobblestoneWall.blockID, 1, 2);
+    				}
     				if(worldObj.getBlockId(x, y, z) == Block.dirt.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
     					worldObj.setBlock(x, y, z, Block.grass.blockID, 0, 2);
     				}
-    				
     				if(worldObj.getBlockId(x, y, z) == Block.grass.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
     					if(1 + (int)(Math.random() * 100) > 98){
     						switch( 1 + (int)(Math.random() * 3)){

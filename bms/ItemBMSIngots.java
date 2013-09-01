@@ -7,8 +7,6 @@ public class ItemBMSIngots extends Item {
 
 	public ItemBMSIngots(int id, String itemName) {
 		super(id);
-		
-		setMaxStackSize(16);
 		setCreativeTab(CreativeTabs.tabMaterials);
 		setUnlocalizedName(itemName);
 		

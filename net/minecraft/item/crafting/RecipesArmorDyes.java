@@ -1,6 +1,7 @@
 package net.minecraft.item.crafting;
 
 import java.util.ArrayList;
+
 import net.minecraft.block.BlockColored;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.inventory.InventoryCrafting;
@@ -9,6 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import bms.EnumBMS;
+import bms.ItemBMSArmor;
 
 public class RecipesArmorDyes implements IRecipe
 {
@@ -28,10 +31,14 @@ public class RecipesArmorDyes implements IRecipe
             {
                 if (itemstack1.getItem() instanceof ItemArmor)
                 {
-                    ItemArmor itemarmor = (ItemArmor)itemstack1.getItem();
+                	ItemArmor itemarmor;
+                	if(itemstack1.getItem() instanceof ItemBMSArmor){
+                		itemarmor = (ItemBMSArmor)itemstack1.getItem();
+                	} else {
+                		itemarmor = (ItemArmor)itemstack1.getItem();
+                	}
 
-                    if (itemarmor.getArmorMaterial() != EnumArmorMaterial.CLOTH || itemstack != null)
-                    {
+                    if ((itemarmor.getArmorMaterial() != EnumArmorMaterial.CLOTH && itemarmor.getArmorMaterial() != EnumBMS.linenArmorMaterial) || itemstack != null){
                         return false;
                     }
 
@@ -55,7 +62,7 @@ public class RecipesArmorDyes implements IRecipe
     /**
      * Returns an Item that is the result of this recipe
      */
-    public ItemStack getCraftingResult(InventoryCrafting par1InventoryCrafting)
+	public ItemStack getCraftingResult(InventoryCrafting par1InventoryCrafting)
     {
         ItemStack itemstack = null;
         int[] aint = new int[3];
@@ -67,7 +74,7 @@ public class RecipesArmorDyes implements IRecipe
         float f;
         float f1;
         int i1;
-
+        
         for (k = 0; k < par1InventoryCrafting.getSizeInventory(); ++k)
         {
             ItemStack itemstack1 = par1InventoryCrafting.getStackInSlot(k);
@@ -76,10 +83,13 @@ public class RecipesArmorDyes implements IRecipe
             {
                 if (itemstack1.getItem() instanceof ItemArmor)
                 {
-                    itemarmor = (ItemArmor)itemstack1.getItem();
+                	if(itemstack1.getItem() instanceof ItemBMSArmor){
+                		itemarmor = (ItemBMSArmor)itemstack1.getItem();
+                	} else {
+                		itemarmor = (ItemArmor)itemstack1.getItem();
+                	}
 
-                    if (itemarmor.getArmorMaterial() != EnumArmorMaterial.CLOTH || itemstack != null)
-                    {
+                	if ((itemarmor.getArmorMaterial() != EnumArmorMaterial.CLOTH && itemarmor.getArmorMaterial() != EnumBMS.linenArmorMaterial) || itemstack != null){
                         return null;
                     }
 
