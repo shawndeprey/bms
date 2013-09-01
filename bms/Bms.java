@@ -48,7 +48,15 @@ public class Bms {
         RenderBMS.registerRenderers();
 
     	// World Generation
-        WorldGeneratorBMS.registerGenerator();        
+        WorldGeneratorBMS.registerGenerator();
+        
+        //System.out.println(10511680 >> 16 & 255);
+        //System.out.println(10511680 >> 8 & 255);
+        //System.out.println(10511680 & 255);
+        System.out.println(159 << 16);
+        System.out.println(100 << 8);
+        //System.out.println( (220 << 16) + (220 << 8) + 220);
+        //13041664 + 50944 + 199 11582703
     }
    
     @EventHandler
