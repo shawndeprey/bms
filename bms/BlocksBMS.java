@@ -1,11 +1,11 @@
 package bms;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class BlocksBMS {
 	// Stained Glass
@@ -49,8 +49,9 @@ public class BlocksBMS {
 	public final static Block adamantiumBlock =			new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("adamantiumBlock").func_111022_d("bms:adamantiumBlock");
 	
 	// Tent Blocks
-	public final static Block tentBlock =				new BlocksTent(2033, Material.cloth, "tentBlock");
+	public final static Block tentBlock =				new BlockTent(2033, Material.cloth, "tentBlock");
 	public final static Block tentClothBlock =			new BlockTentCloth(2034, Material.cloth, "tentClothBlock");
+	public final static Block tentBlockDoor =			new BlockTentDoor(2035, Material.cloth, "tentDoor");
 	
 	public static boolean registerBlocks()
 	{
@@ -135,6 +136,8 @@ public class BlocksBMS {
     		LanguageRegistry.addName(tentBlock, "Tent Block");
 		GameRegistry.registerBlock(tentClothBlock, "tentClothBlock");
     		LanguageRegistry.addName(tentClothBlock, "Tent Cloth");
+		GameRegistry.registerBlock(tentBlockDoor, "tentBlockDoor");
+    		LanguageRegistry.addName(tentBlockDoor, "Tent Door");
         	
 		return true;
 	}

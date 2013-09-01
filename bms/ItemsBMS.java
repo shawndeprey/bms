@@ -9,6 +9,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
@@ -29,6 +30,7 @@ public class ItemsBMS {
 	public static Item citrinePowder;
 	public static Item jadeitePowder;
 	public static Item diamondPowder;
+	public static Item doorTent;
 	
 	// Projectile Weapons
 	public static Item slingshot;
@@ -73,6 +75,7 @@ public class ItemsBMS {
     public static ItemStack adamantiumHoeStack;
     public static ItemStack titaniumSwordStack;
     public static ItemStack adamantiumSwordStack;
+    public static ItemStack doorTentStack;
     
     public static boolean initItems()
     {
@@ -88,6 +91,7 @@ public class ItemsBMS {
     	citrinePowder =						new Item(9008).setUnlocalizedName("citrinePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:citrinePowder");
     	jadeitePowder =						new Item(9009).setUnlocalizedName("jadeitePowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:jadeitePowder");
     	diamondPowder =						new Item(9010).setUnlocalizedName("diamondPowder").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:diamondPowder");
+    	doorTent =							new ItemBMSTentDoor(9023, Material.cloth, "doorTent").setUnlocalizedName("doorTent").func_111206_d("bms:doorTent");
     	
     	// Projectile Weapons
     	slingshot = 						new ItemSlingshot(9021).setUnlocalizedName("slingshot").func_111206_d("bms:slingshot");
@@ -121,11 +125,11 @@ public class ItemsBMS {
         citrineStack = 						new ItemStack(citrine);
         jadeiteStack = 						new ItemStack(jadeite);
         diamondStack = 						new ItemStack(Item.diamond);
-        rubyPowderStack = 					new ItemStack(rubyPowder, 4);
-        sapphirePowderStack = 				new ItemStack(sapphirePowder, 4);
-        citrinePowderStack = 				new ItemStack(citrinePowder, 4);
-        jadeitePowderStack = 				new ItemStack(jadeitePowder, 4);
-        diamondPowderStack = 				new ItemStack(diamondPowder, 4);
+        rubyPowderStack = 					new ItemStack(rubyPowder, 2);
+        sapphirePowderStack = 				new ItemStack(sapphirePowder, 2);
+        citrinePowderStack = 				new ItemStack(citrinePowder, 2);
+        jadeitePowderStack = 				new ItemStack(jadeitePowder, 2);
+        diamondPowderStack = 				new ItemStack(diamondPowder, 2);
         titaniumShovelStack = 				new ItemStack(titaniumShovel);
         titaniumPickaxeStack = 				new ItemStack(titaniumPickaxe);
         titaniumHatchetStack = 				new ItemStack(titaniumHatchet);
@@ -136,12 +140,18 @@ public class ItemsBMS {
         adamantiumHoeStack = 				new ItemStack(adamantiumHoe);
         titaniumSwordStack = 				new ItemStack(titaniumSword);
         adamantiumSwordStack = 				new ItemStack(adamantiumSword);
+        doorTentStack = 					new ItemStack(doorTent);
         
         return true;
 	}
 	
 	public static boolean registerItems()
 	{
+		// Items
+		GameRegistry.registerItem(doorTent, "doorTent");
+    		LanguageRegistry.addName(doorTent, "Tent Door");
+    		
+		// Minerals
 		GameRegistry.registerItem(titaniumIngot, "titaniumIngot");
 	    	LanguageRegistry.addName(titaniumIngot, "Titanium Ingot");
 	    GameRegistry.registerItem(adamantiumIngot, "adamantiumIngot");
@@ -165,6 +175,7 @@ public class ItemsBMS {
 	    GameRegistry.registerItem(diamondPowder, "diamondPowder");
 	    	LanguageRegistry.addName(diamondPowder, "Diamond Powder");
 	    	
+    	// Tools
 		GameRegistry.registerItem(titaniumShovel, "titaniumShovel");
 	    	LanguageRegistry.addName(titaniumShovel, "Titanium Shovel");
 	    GameRegistry.registerItem(titaniumPickaxe, "titaniumPickaxe");
@@ -173,7 +184,6 @@ public class ItemsBMS {
 	    	LanguageRegistry.addName(titaniumHatchet, "Titanium Hatchet");
 	    GameRegistry.registerItem(titaniumHoe, "titaniumHoe");
 	    	LanguageRegistry.addName(titaniumHoe, "Titanium Hoe");
-	    	
 	    GameRegistry.registerItem(adamantiumShovel, "adamantiumShovel");
 	    	LanguageRegistry.addName(adamantiumShovel, "Adamantium Shovel");
 	    GameRegistry.registerItem(adamantiumPickaxe, "adamantiumPickaxe");
@@ -183,6 +193,7 @@ public class ItemsBMS {
 	    GameRegistry.registerItem(adamantiumHoe, "adamantiumHoe");
 	    	LanguageRegistry.addName(adamantiumHoe, "Adamantium Hoe");
 	    	
+    	// Melee Weapons
 	    GameRegistry.registerItem(titaniumSword, "titaniumSword");
 	    	LanguageRegistry.addName(titaniumSword, "Titanium Sword");
 	    GameRegistry.registerItem(adamantiumSword, "adamantiumSword");

@@ -1,13 +1,14 @@
 package net.minecraft.client.renderer;
 
-import bms.BlockStainedPane;
-import bms.BlockTentCloth;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import static net.minecraftforge.common.ForgeDirection.DOWN;
+import static net.minecraftforge.common.ForgeDirection.EAST;
+import static net.minecraftforge.common.ForgeDirection.NORTH;
+import static net.minecraftforge.common.ForgeDirection.SOUTH;
+import static net.minecraftforge.common.ForgeDirection.UP;
+import static net.minecraftforge.common.ForgeDirection.WEST;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAnvil;
 import net.minecraft.block.BlockBeacon;
-import net.minecraft.block.BlockBed;
 import net.minecraft.block.BlockBrewingStand;
 import net.minecraft.block.BlockCauldron;
 import net.minecraft.block.BlockCocoa;
@@ -48,7 +49,12 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-import static net.minecraftforge.common.ForgeDirection.*;
+import bms.BlockStainedPane;
+import bms.BlockTent;
+import bms.BlockTentCloth;
+import bms.BlockTentDoor;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderBlocks
@@ -487,6 +493,8 @@ public class RenderBlocks
                 case 38: return this.renderBlockHopper((BlockHopper)par1Block, par2, par3, par4);
                 case 40: return this.renderBlockStainedPane((BlockStainedPane)par1Block, par2, par3, par4);
                 case 41: return this.renderBlockTentCloth((BlockTentCloth)par1Block, par2, par3, par4);
+                case 42: return this.renderBlockTent((BlockTent)par1Block, par2, par3, par4);
+                case 43: return this.renderBlockTentDoor((BlockTentDoor)par1Block, par2, par3, par4);
                 default: return FMLRenderAccessLibrary.renderWorldBlock(this, blockAccess, par2, par3, par4, par1Block, l);
             }
         }
@@ -4348,6 +4356,62 @@ public class RenderBlocks
         return true;
     }
     
+    public boolean renderBlockTent(BlockTent par1BlockTent, int par2, int par3, int par4)
+    {
+    	int l = this.blockAccess.getBlockMetadata(par2, par3, par4);
+        Tessellator tessellator = Tessellator.instance;
+        tessellator.setBrightness(par1BlockTent.getMixedBrightnessForBlock(this.blockAccess, par2, par3, par4));
+        float f = 1.0F;
+        int i1 = par1BlockTent.colorMultiplier(this.blockAccess, par2, par3, par4);
+        float f1 = (float)(i1 >> 16 & 255) / 255.0F;
+        float f2 = (float)(i1 >> 8 & 255) / 255.0F;
+        float f3 = (float)(i1 & 255) / 255.0F;
+
+        if (EntityRenderer.anaglyphEnable)
+        {
+            float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
+            float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
+            float f6 = (f1 * 30.0F + f3 * 70.0F) / 100.0F;
+            f1 = f4;
+            f2 = f5;
+            f3 = f6;
+        }
+
+        tessellator.setColorOpaque_F(f * f1, f * f2, f * f3);
+        Icon icon;
+        Icon icon1;
+
+        if (this.hasOverrideBlockTexture())
+        {
+            icon = this.overrideBlockTexture;
+            icon1 = this.overrideBlockTexture;
+        }
+        else
+        {
+            int j1 = this.blockAccess.getBlockMetadata(par2, par3, par4);
+            icon = this.getBlockIconFromSideAndMetadata(par1BlockTent, 0, j1);
+        }
+        
+        // Flags
+        boolean N = par1BlockTent.getBlock(this.blockAccess, par2, par3, par4, NORTH);
+        boolean E = par1BlockTent.getBlock(this.blockAccess, par2, par3, par4, EAST);
+        boolean S = par1BlockTent.getBlock(this.blockAccess, par2, par3, par4, SOUTH);
+        boolean W = par1BlockTent.getBlock(this.blockAccess, par2, par3, par4, WEST);
+        
+        if(N && S)
+        {
+        	return tentWall_1(tessellator, par2, par3, par4, icon);
+        }
+        else if(E && W)
+        {
+        	return tentWall_0(tessellator, par2, par3, par4, icon);
+        }
+        else
+        {
+        	return this.renderStandardBlock(par1BlockTent, par2, par3, par4);
+        }
+    }
+    
     public boolean renderBlockTentCloth(BlockTentCloth par1BlockTentCloth, int par2, int par3, int par4)
     {
     	int l = this.blockAccess.getBlockMetadata(par2, par3, par4);
@@ -4452,10 +4516,14 @@ public class RenderBlocks
 	        		return tentCapBack_0(tessellator, par2, par3, par4, icon);
 	        	}
 	        }
-	        if(E && W && U  && l == 13)
+	        if(E && W && U && l == 3)
 	        {
 	        	// Other Blocks
 	        	return tentWall_0(tessellator, par2, par3, par4, icon);
+	        }
+	        else
+	        {
+	        	return this.renderStandardBlock(par1BlockTentCloth, par2, par3, par4);
 	        }
         }
         
@@ -4524,6 +4592,10 @@ public class RenderBlocks
 	        	// Other Blocks
 	        	return tentWall_1(tessellator, par2, par3, par4, icon);
 	        }
+	        else
+	        {
+	        	return this.renderStandardBlock(par1BlockTentCloth, par2, par3, par4);
+	        }
         }
         
         // North Facing Code
@@ -4591,6 +4663,10 @@ public class RenderBlocks
 	        	// Other Blocks
 	        	return tentWall_0(tessellator, par2, par3, par4, icon);
 	        }
+	        else
+	        {
+	        	return this.renderStandardBlock(par1BlockTentCloth, par2, par3, par4);
+	        }
         }
         
      // West Facing Code
@@ -4657,6 +4733,10 @@ public class RenderBlocks
 	        {
 	        	// Other Blocks
 	        	return tentWall_1(tessellator, par2, par3, par4, icon);
+	        }
+	        else
+	        {
+	        	return this.renderStandardBlock(par1BlockTentCloth, par2, par3, par4);
 	        }
         }
         return true;
@@ -7372,8 +7452,378 @@ public class RenderBlocks
     	return true;
     }
     
+    public boolean renderBlockTentDoor(Block par1Block, int par2, int par3, int par4)
+    {
+    	int l = this.blockAccess.getBlockMetadata(par2, par3, par4);
+        Tessellator tessellator = Tessellator.instance;
+        tessellator.setBrightness(par1Block.getMixedBrightnessForBlock(this.blockAccess, par2, par3, par4));
+        float f = 1.0F;
+        int i1 = par1Block.colorMultiplier(this.blockAccess, par2, par3, par4);
+        float f1 = (float)(i1 >> 16 & 255) / 255.0F;
+        float f2 = (float)(i1 >> 8 & 255) / 255.0F;
+        float f3 = (float)(i1 & 255) / 255.0F;
+
+        if (EntityRenderer.anaglyphEnable)
+        {
+            float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
+            float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
+            float f6 = (f1 * 30.0F + f3 * 70.0F) / 100.0F;
+            f1 = f4;
+            f2 = f5;
+            f3 = f6;
+        }
+
+        tessellator.setColorOpaque_F(f * f1, f * f2, f * f3);
+        Icon icon;
+        Icon icon1;
+
+        if (this.hasOverrideBlockTexture())
+        {
+            icon = this.overrideBlockTexture;
+            icon1 = this.overrideBlockTexture;
+        }
+        else
+        {
+            int j1 = this.blockAccess.getBlockMetadata(par2, par3, par4);
+            icon = this.getBlockIconFromSideAndMetadata(par1Block, 0, j1);
+        }
+        
+        int meta = this.blockAccess.getBlockMetadata(par2, par3, par4);
+        
+        // South Facing Code
+        if(meta == 0)
+        	return tentDoorSouth(tessellator, par2, par3, par4, icon);
+        
+    	// West Facing Code
+        if(meta == 1)
+        	return tentDoorWest(tessellator, par2, par3, par4, icon);
+        
+        // North Facing Code
+        if(meta == 2)
+        	return tentDoorNorth(tessellator, par2, par3, par4, icon);
+        
+        // East Facing Code
+        if(meta == 3)
+        	return tentDoorEast(tessellator, par2, par3, par4, icon);
+
+        // North-South Facing Top Code
+        if(meta == 8)
+        	return tentDoorNSTop(tessellator, par2, par3, par4, icon);
+        
+        // East-West Facing Top Code
+        if(meta == 9)
+        	return tentDoorEWTop(tessellator, par2, par3, par4, icon);
+        
+        return true;
+    }
+
+    private boolean tentDoorSouth(Tessellator tessellator, double par2, double par3, double par4, Icon icon)
+    {
+    	double x1 = (double)(par2 + 0.1875);
+    	double y1 = (double)(par3 + 0.75);
+    	double z1 = (double)(par4 + 0.0625);
+    	double x2 = (double)(par2 + 0.1875);
+    	double y2 = (double)(par3 + 0);
+    	double z2 = (double)(par4 + 1);
+    	double x3 = (double)(par2 + 0);
+    	double y3 = (double)(par3 + 0);
+    	double z3 = (double)(par4 + 1);
+    	double x4 = (double)(par2 + 0);
+    	double y4 = (double)(par3 + 0.75);
+    	double z4 = (double)(par4 + 0.0625);
+    	double x5 = (double)(par2 + 0.1875);
+    	double y5 = (double)(par3 + 1);
+    	double z5 = (double)(par4 + 0.0625);
+    	double x6 = (double)(par2 + 0.1875);
+    	double y6 = (double)(par3 + 1);
+    	double z6 = (double)(par4 + 1);
+    	double x7 = (double)(par2 + 0);
+    	double y7 = (double)(par3 + 1);
+    	double z7 = (double)(par4 + 1);
+    	double x8 = (double)(par2 + 0);
+    	double y8 = (double)(par3 + 1);
+    	double z8 = (double)(par4 + 0.0625);
+    	double x9 = (double)(par2 + 0.1875);
+    	double y9 = (double)(par3 + 0.75);
+    	double z9 = (double)(par4 + 0.125);
+    	double x10 = (double)(par2 + 0);
+    	double y10 = (double)(par3 + 0.75);
+    	double z10 = (double)(par4 + 0.125);
+    	double x11 = (double)(par2 + 0.1875);
+    	double y11 = (double)(par3 + 0.3125);
+    	double z11 = (double)(par4 + 0.125);
+    	double x12 = (double)(par2 + 0);
+    	double y12 = (double)(par3 + 0.3125);
+    	double z12 = (double)(par4 + 0.125);
+    	double x13 = (double)(par2 + 0.1875);
+    	double y13 = (double)(par3 + 0.3125);
+    	double z13 = (double)(par4 + 0.1875);
+    	double x14 = (double)(par2 + 0);
+    	double y14 = (double)(par3 + 0.3125);
+    	double z14 = (double)(par4 + 0.1875);
+    	double x15 = (double)(par2 + 0.1875);
+    	double y15 = (double)(par3 + 0.0625);
+    	double z15 = (double)(par4 + 0.1875);
+    	double x16 = (double)(par2 + 0);
+    	double y16 = (double)(par3 + 0.0625);
+    	double z16 = (double)(par4 + 0.1875);
+    	double x17 = (double)(par2 + 0.1875);
+    	double y17 = (double)(par3 + 0.0625);
+    	double z17 = (double)(par4 + 0.25);
+    	double x18 = (double)(par2 + 0);
+    	double y18 = (double)(par3 + 0.0625);
+    	double z18 = (double)(par4 + 0.25);
+    	double x19 = (double)(par2 + 0.1875);
+    	double y19 = (double)(par3 + 0);
+    	double z19 = (double)(par4 + 0.25);
+    	double x20 = (double)(par2 + 0);
+    	double y20 = (double)(par3 + 0);
+    	double z20 = (double)(par4 + 0.25);
+    	double x21 = (double)(par2 + 0.1875);
+    	double y21 = (double)(par3 + 0.0625);
+    	double z21 = (double)(par4 + 1);
+    	double x22 = (double)(par2 + 0);
+    	double y22 = (double)(par3 + 0.0625);
+    	double z22 = (double)(par4 + 1);
+    	double x23 = (double)(par2 + 0.1875);
+    	double y23 = (double)(par3 + 0.3125);
+    	double z23 = (double)(par4 + 1);
+    	double x24 = (double)(par2 + 0);
+    	double y24 = (double)(par3 + 0.3125);
+    	double z24 = (double)(par4 + 1);
+    	double x25 = (double)(par2 + 0.1875);
+    	double y25 = (double)(par3 + 0.75);
+    	double z25 = (double)(par4 + 1);
+    	double x26 = (double)(par2 + 0);
+    	double y26 = (double)(par3 + 0.75);
+    	double z26 = (double)(par4 + 1);
+
+    	double u1 = (double)icon.getMinU();
+    	double v1 = (double)icon.getInterpolatedV(4D);
+    	double u2 = (double)icon.getInterpolatedU(15D);
+    	double v2 = (double)icon.getInterpolatedV(4D);
+    	double u3 = (double)icon.getInterpolatedU(15D);
+    	double v3 = (double)icon.getInterpolatedV(11D);
+    	double u4 = (double)icon.getMinU();
+    	double v4 = (double)icon.getInterpolatedV(11D);
+    	double u5 = (double)icon.getInterpolatedU(3D);
+    	double v5 = (double)icon.getInterpolatedV(1D);
+    	double u6 = (double)icon.getMinU();
+    	double v6 = (double)icon.getInterpolatedV(1D);
+    	double u7 = (double)icon.getMinU();
+    	double v7 = (double)icon.getMinV();
+    	double u8 = (double)icon.getInterpolatedU(3D);
+    	double v8 = (double)icon.getMinV();
+    	double u9 = (double)icon.getMinU();
+    	double v9 = (double)icon.getMaxV();
+    	double u10 = (double)icon.getMinU();
+    	double v10 = (double)icon.getInterpolatedV(12D);
+    	double u11 = (double)icon.getInterpolatedU(3D);
+    	double v11 = (double)icon.getInterpolatedV(12D);
+    	double u12 = (double)icon.getInterpolatedU(3D);
+    	double v12 = (double)icon.getMaxV();
+    	double u13 = (double)icon.getMinU();
+    	double v13 = (double)icon.getMinV();
+    	double u14 = (double)icon.getInterpolatedU(3D);
+    	double v14 = (double)icon.getInterpolatedV(1D);
+    	double u15 = (double)icon.getMinU();
+    	double v15 = (double)icon.getInterpolatedV(1D);
+    	double u16 = (double)icon.getMinU();
+    	double v16 = (double)icon.getInterpolatedV(5D);
+    	double u17 = (double)icon.getInterpolatedU(3D);
+    	double v17 = (double)icon.getInterpolatedV(5D);
+    	double u18 = (double)icon.getInterpolatedU(3D);
+    	double v18 = (double)icon.getInterpolatedV(2D);
+    	double u19 = (double)icon.getMinU();
+    	double v19 = (double)icon.getInterpolatedV(2D);
+    	double u20 = (double)icon.getMinU();
+    	double v20 = (double)icon.getInterpolatedV(1D);
+    	double u21 = (double)icon.getInterpolatedU(3D);
+    	double v21 = (double)icon.getInterpolatedV(1D);
+    	double u22 = (double)icon.getInterpolatedU(3D);
+    	double v22 = (double)icon.getInterpolatedV(3D);
+    	double u23 = (double)icon.getMinU();
+    	double v23 = (double)icon.getInterpolatedV(3D);
+    	double u24 = (double)icon.getInterpolatedU(3D);
+    	double v24 = (double)icon.getMinV();
+    	double u25 = (double)icon.getInterpolatedU(3D);
+    	double v25 = (double)icon.getInterpolatedV(5D);
+    	double u26 = (double)icon.getMinU();
+    	double v26 = (double)icon.getInterpolatedV(5D);
+    	double u27 = (double)icon.getInterpolatedU(3D);
+    	double v27 = (double)icon.getInterpolatedV(12D);
+    	double u28 = (double)icon.getMinU();
+    	double v28 = (double)icon.getInterpolatedV(12D);
+    	double u29 = (double)icon.getInterpolatedU(3D);
+    	double v29 = (double)icon.getMaxV();
+    	double u30 = (double)icon.getMinU();
+    	double v30 = (double)icon.getMaxV();
+    	double u31 = (double)icon.getMinU();
+    	double v31 = (double)icon.getMinV();
+    	double u32 = (double)icon.getMaxU();
+    	double v32 = (double)icon.getMinV();
+    	double u33 = (double)icon.getMaxU();
+    	double v33 = (double)icon.getInterpolatedV(4D);
+    	double u34 = (double)icon.getMinU();
+    	double v34 = (double)icon.getInterpolatedV(4D);
+    	double u35 = (double)icon.getMinU();
+    	double v35 = (double)icon.getInterpolatedV(15D);
+    	double u36 = (double)icon.getMinU();
+    	double v36 = (double)icon.getInterpolatedV(11D);
+    	double u37 = (double)icon.getInterpolatedU(14D);
+    	double v37 = (double)icon.getInterpolatedV(11D);
+    	double u38 = (double)icon.getInterpolatedU(14D);
+    	double v38 = (double)icon.getInterpolatedV(15D);
+    	double u39 = (double)icon.getInterpolatedU(13D);
+    	double v39 = (double)icon.getMaxV();
+    	double u40 = (double)icon.getMinU();
+    	double v40 = (double)icon.getMaxV();
+    	double u41 = (double)icon.getMinU();
+    	double v41 = (double)icon.getInterpolatedV(15D);
+    	double u42 = (double)icon.getInterpolatedU(13D);
+    	double v42 = (double)icon.getInterpolatedV(15D);
+    	double u43 = (double)icon.getInterpolatedU(3D);
+    	double v43 = (double)icon.getMinV();
+    	double u44 = (double)icon.getMinU();
+    	double v44 = (double)icon.getMaxV();
+    	double u45 = (double)icon.getMinU();
+    	double v45 = (double)icon.getMinV();
+    	double u46 = (double)icon.getMinU();
+    	double v46 = (double)icon.getInterpolatedV(4D);
+    	double u47 = (double)icon.getInterpolatedU(15D);
+    	double v47 = (double)icon.getMinV();
+    	double u48 = (double)icon.getInterpolatedU(14D);
+    	double v48 = (double)icon.getInterpolatedV(4D);
+    	double u49 = (double)icon.getMinU();
+    	double v49 = (double)icon.getInterpolatedV(4D);
+    	double u50 = (double)icon.getMinU();
+    	double v50 = (double)icon.getInterpolatedV(11D);
+    	double u51 = (double)icon.getInterpolatedU(14D);
+    	double v51 = (double)icon.getInterpolatedV(11D);
+    	double u52 = (double)icon.getInterpolatedU(13D);
+    	double v52 = (double)icon.getInterpolatedV(11D);
+    	double u53 = (double)icon.getMinU();
+    	double v53 = (double)icon.getInterpolatedV(11D);
+    	double u54 = (double)icon.getMinU();
+    	double v54 = (double)icon.getInterpolatedV(15D);
+    	double u55 = (double)icon.getInterpolatedU(13D);
+    	double v55 = (double)icon.getInterpolatedV(15D);
+    	double u56 = (double)icon.getInterpolatedU(12D);
+    	double v56 = (double)icon.getInterpolatedV(15D);
+    	double u57 = (double)icon.getInterpolatedU(12D);
+    	double v57 = (double)icon.getMaxV();
+
+    	tessellator.addVertexWithUV(x12, y12, z12, u1, v1);
+    	tessellator.addVertexWithUV(x24, y24, z24, u2, v2);
+    	tessellator.addVertexWithUV(x26, y26, z26, u3, v3);
+    	tessellator.addVertexWithUV(x10, y10, z10, u4, v4);
+    	tessellator.addVertexWithUV(x21, y21, z21, u5, v5);
+    	tessellator.addVertexWithUV(x22, y22, z22, u6, v6);
+    	tessellator.addVertexWithUV(x3, y3, z3, u7, v7);
+    	tessellator.addVertexWithUV(x2, y2, z2, u8, v8);
+    	tessellator.addVertexWithUV(x5, y5, z5, u9, v9);
+    	tessellator.addVertexWithUV(x1, y1, z1, u10, v10);
+    	tessellator.addVertexWithUV(x4, y4, z4, u11, v11);
+    	tessellator.addVertexWithUV(x8, y8, z8, u12, v12);
+    	tessellator.addVertexWithUV(x4, y4, z4, u13, v13);
+    	tessellator.addVertexWithUV(x1, y1, z1, u8, v8);
+    	tessellator.addVertexWithUV(x9, y9, z9, u14, v14);
+    	tessellator.addVertexWithUV(x10, y10, z10, u15, v15);
+    	tessellator.addVertexWithUV(x11, y11, z11, u16, v16);
+    	tessellator.addVertexWithUV(x12, y12, z12, u17, v17);
+    	tessellator.addVertexWithUV(x10, y10, z10, u11, v11);
+    	tessellator.addVertexWithUV(x9, y9, z9, u10, v10);
+    	tessellator.addVertexWithUV(x13, y13, z13, u18, v18);
+    	tessellator.addVertexWithUV(x14, y14, z14, u19, v19);
+    	tessellator.addVertexWithUV(x12, y12, z12, u15, v15);
+    	tessellator.addVertexWithUV(x11, y11, z11, u14, v14);
+    	tessellator.addVertexWithUV(x15, y15, z15, u20, v20);
+    	tessellator.addVertexWithUV(x16, y16, z16, u21, v21);
+    	tessellator.addVertexWithUV(x14, y14, z14, u17, v17);
+    	tessellator.addVertexWithUV(x13, y13, z13, u16, v16);
+    	tessellator.addVertexWithUV(x17, y17, z17, u22, v22);
+    	tessellator.addVertexWithUV(x18, y18, z18, u23, v23);
+    	tessellator.addVertexWithUV(x16, y16, z16, u19, v19);
+    	tessellator.addVertexWithUV(x15, y15, z15, u18, v18);
+    	tessellator.addVertexWithUV(x19, y19, z19, u13, v13);
+    	tessellator.addVertexWithUV(x20, y20, z20, u24, v24);
+    	tessellator.addVertexWithUV(x18, y18, z18, u21, v21);
+    	tessellator.addVertexWithUV(x17, y17, z17, u20, v20);
+    	tessellator.addVertexWithUV(x19, y19, z19, u22, v22);
+    	tessellator.addVertexWithUV(x2, y2, z2, u12, v12);
+    	tessellator.addVertexWithUV(x3, y3, z3, u9, v9);
+    	tessellator.addVertexWithUV(x20, y20, z20, u23, v23);
+    	tessellator.addVertexWithUV(x23, y23, z23, u25, v25);
+    	tessellator.addVertexWithUV(x24, y24, z24, u26, v26);
+    	tessellator.addVertexWithUV(x22, y22, z22, u6, v6);
+    	tessellator.addVertexWithUV(x21, y21, z21, u5, v5);
+    	tessellator.addVertexWithUV(x25, y25, z25, u27, v27);
+    	tessellator.addVertexWithUV(x26, y26, z26, u28, v28);
+    	tessellator.addVertexWithUV(x24, y24, z24, u26, v26);
+    	tessellator.addVertexWithUV(x23, y23, z23, u25, v25);
+    	tessellator.addVertexWithUV(x25, y25, z25, u27, v27);
+    	tessellator.addVertexWithUV(x6, y6, z6, u29, v29);
+    	tessellator.addVertexWithUV(x7, y7, z7, u30, v30);
+    	tessellator.addVertexWithUV(x26, y26, z26, u28, v28);
+    	tessellator.addVertexWithUV(x4, y4, z4, u31, v31);
+    	tessellator.addVertexWithUV(x26, y26, z26, u32, v32);
+    	tessellator.addVertexWithUV(x7, y7, z7, u33, v33);
+    	tessellator.addVertexWithUV(x8, y8, z8, u34, v34);
+    	tessellator.addVertexWithUV(x14, y14, z14, u35, v35);
+    	tessellator.addVertexWithUV(x16, y16, z16, u36, v36);
+    	tessellator.addVertexWithUV(x22, y22, z22, u37, v37);
+    	tessellator.addVertexWithUV(x24, y24, z24, u38, v38);
+    	tessellator.addVertexWithUV(x22, y22, z22, u39, v39);
+    	tessellator.addVertexWithUV(x18, y18, z18, u40, v40);
+    	tessellator.addVertexWithUV(x20, y20, z20, u41, v41);
+    	tessellator.addVertexWithUV(x3, y3, z3, u42, v42);
+    	tessellator.addVertexWithUV(x6, y6, z6, u43, v43);
+    	tessellator.addVertexWithUV(x5, y5, z5, u12, v12);
+    	tessellator.addVertexWithUV(x8, y8, z8, u44, v44);
+    	tessellator.addVertexWithUV(x7, y7, z7, u45, v45);
+    	tessellator.addVertexWithUV(x25, y25, z25, u46, v46);
+    	tessellator.addVertexWithUV(x1, y1, z1, u2, v2);
+    	tessellator.addVertexWithUV(x5, y5, z5, u47, v47);
+    	tessellator.addVertexWithUV(x6, y6, z6, u45, v45);
+    	tessellator.addVertexWithUV(x9, y9, z9, u48, v48);
+    	tessellator.addVertexWithUV(x25, y25, z25, u49, v49);
+    	tessellator.addVertexWithUV(x23, y23, z23, u50, v50);
+    	tessellator.addVertexWithUV(x11, y11, z11, u51, v51);
+    	tessellator.addVertexWithUV(x13, y13, z13, u52, v52);
+    	tessellator.addVertexWithUV(x23, y23, z23, u53, v53);
+    	tessellator.addVertexWithUV(x21, y21, z21, u54, v54);
+    	tessellator.addVertexWithUV(x15, y15, z15, u55, v55);
+    	tessellator.addVertexWithUV(x17, y17, z17, u56, v56);
+    	tessellator.addVertexWithUV(x21, y21, z21, u54, v54);
+    	tessellator.addVertexWithUV(x2, y2, z2, u9, v9);
+    	tessellator.addVertexWithUV(x19, y19, z19, u57, v57);
+    	return true;
+    }
     
+    private boolean tentDoorWest(Tessellator tessellator, double par2, double par3, double par4, Icon icon)
+    {
+    	return true;
+    }
     
+    private boolean tentDoorNorth(Tessellator tessellator, double par2, double par3, double par4, Icon icon)
+    {
+    	return true;
+    }
+    
+    private boolean tentDoorEast(Tessellator tessellator, double par2, double par3, double par4, Icon icon)
+    {
+    	return true;
+    }
+    
+    private boolean tentDoorNSTop(Tessellator tessellator, double par2, double par3, double par4, Icon icon)
+    {
+    	return true;
+    }
+    
+    private boolean tentDoorEWTop(Tessellator tessellator, double par2, double par3, double par4, Icon icon)
+    {
+    	return true;
+    }
     
     /**
      * Renders any block requiring croseed squares such as reeds, flowers, and mushrooms
