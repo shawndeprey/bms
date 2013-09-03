@@ -17,11 +17,26 @@ public class EntitiesBMS {
 		EntityRegistry.registerModEntity(EntityCitrineRune.class, "Entity Citrine Rune", 9500, BMS, 128, 1, true);
 		
 		// (class, entityName, entityID, modClass, trackingRange, updateFrequency, sendVelocityUpdates)
-		EntityRegistry.registerModEntity(EntitySkeletonMage.class, "Skeleton Mage", 9600, BMS, 128, 1, true);
+		EntityRegistry.registerModEntity(EntitySkeletonMageFire.class, "Skeleton Mage Fire", 9600, BMS, 128, 1, true);
+		EntityRegistry.registerModEntity(EntitySkeletonMageWater.class, "Skeleton Mage Water", 9700, BMS, 128, 1, true);
+		EntityRegistry.registerModEntity(EntitySkeletonMageIce.class, "Skeleton Mage Ice", 9800, BMS, 128, 1, true);
+		EntityRegistry.registerModEntity(EntitySkeletonMageEarth.class, "Skeleton Mage Earth", 9900, BMS, 128, 1, true);
 		// (class, spawnChance, minGroupSize, maxGroupSize, mobType, spawnBiomes * n)
-		EntityRegistry.addSpawn(EntitySkeletonMage.class, 100, 2, 4, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
+		/*EntityRegistry.addSpawn(EntitySkeletonMage.class, 100, 2, 4, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMage.class, new RenderSkeletonMage());
-		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMage.name", "Skeleton Mage");
+		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMage.name", "Skeleton Mage");*/
+		EntityRegistry.addSpawn(EntitySkeletonMageFire.class, 100, 1, 1, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageFire.class, new RenderSkeletonMage());
+		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMageFire.name", "Skeleton Mage Fire");
+		EntityRegistry.addSpawn(EntitySkeletonMageWater.class, 100, 1, 1, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageWater.class, new RenderSkeletonMage());
+		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMageWater.name", "Skeleton Mage Water");
+		EntityRegistry.addSpawn(EntitySkeletonMageIce.class, 100, 1, 1, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageIce.class, new RenderSkeletonMage());
+		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMageIce.name", "Skeleton Mage Ice");
+		EntityRegistry.addSpawn(EntitySkeletonMageEarth.class, 100, 1, 1, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageEarth.class, new RenderSkeletonMage());
+		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMageEarth.name", "Skeleton Mage Earth");
 		return true;
 	}
 }
