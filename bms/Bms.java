@@ -50,6 +50,7 @@ public class Bms {
     	// World Generation
         WorldGeneratorBMS.registerGenerator();
         
+        
         //System.out.println(10511680 >> 16 & 255);
         //System.out.println(10511680 >> 8 & 255);
         //System.out.println(10511680 & 255);

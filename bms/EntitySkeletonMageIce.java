@@ -10,6 +10,8 @@ public class EntitySkeletonMageIce extends EntitySkeletonMage {
 	{
 		super(world);
 		skeliType = 2;
+		mageRuneDropID = ItemsBMS.iceRune.itemID;
+		mageStaffDropID = ItemsBMS.iceStaff.itemID;
 	}
 	
 	protected void addRandomArmor()

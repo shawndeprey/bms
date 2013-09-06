@@ -37,6 +37,7 @@ public class EntitiesBMS {
 		EntityRegistry.addSpawn(EntitySkeletonMageEarth.class, 100, 1, 1, EnumCreatureType.monster, BiomeGenBase.beach, BiomeGenBase.extremeHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.river, BiomeGenBase.swampland);
 		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageEarth.class, new RenderSkeletonMage());
 		LanguageRegistry.instance().addStringLocalization("Bms.EntitySkeletonMageEarth.name", "Skeleton Mage Earth");
+		EntityRegistry.findGlobalUniqueEntityId();
 		return true;
 	}
 }
