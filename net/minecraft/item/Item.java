@@ -138,8 +138,8 @@ public class Item
     public static ItemFishingRod fishingRod = (ItemFishingRod)(new ItemFishingRod(90)).setUnlocalizedName("fishingRod").func_111206_d("fishing_rod");
     public static Item pocketSundial = (new Item(91)).setUnlocalizedName("clock").setCreativeTab(CreativeTabs.tabTools).func_111206_d("clock");
     public static Item glowstone = (new Item(92)).setUnlocalizedName("yellowDust").setPotionEffect(PotionHelper.glowstoneEffect).setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("glowstone_dust");
-    public static Item fishRaw = (new ItemFood(93, 2, 0.3F, false)).setUnlocalizedName("fishRaw").func_111206_d("fish_raw");
-    public static Item fishCooked = (new ItemFood(94, 5, 0.6F, false)).setUnlocalizedName("fishCooked").func_111206_d("fish_cooked");
+    public static Item fishRaw = (new ItemFood(93, 4, 0.3F, false)).setUnlocalizedName("fishRaw").func_111206_d("fish_raw");
+    public static Item fishCooked = (new ItemFood(94, 10, 0.6F, false)).setUnlocalizedName("fishCooked").func_111206_d("fish_cooked");
     public static Item dyePowder = (new ItemDye(95)).setUnlocalizedName("dyePowder").func_111206_d("dye_powder");
     public static Item bone = (new Item(96)).setUnlocalizedName("bone").setFull3D().setCreativeTab(CreativeTabs.tabMisc).func_111206_d("bone");
     public static Item sugar = (new Item(97)).setUnlocalizedName("sugar").setPotionEffect(PotionHelper.sugarEffect).setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("sugar");
@@ -159,7 +159,7 @@ public class Item
     public static Item beefRaw = (new ItemFood(107, 3, 0.3F, true)).setUnlocalizedName("beefRaw").func_111206_d("beef_raw");
     public static Item beefCooked = (new ItemFood(108, 8, 0.8F, true)).setUnlocalizedName("beefCooked").func_111206_d("beef_cooked");
     public static Item chickenRaw = (new ItemFood(109, 2, 0.3F, true)).setPotionEffect(Potion.hunger.id, 30, 0, 0.3F).setUnlocalizedName("chickenRaw").func_111206_d("chicken_raw");
-    public static Item chickenCooked = (new ItemFood(110, 6, 0.6F, true)).setUnlocalizedName("chickenCooked").func_111206_d("chicken_cooked");
+    public static Item chickenCooked = (new ItemFood(110, 8, 0.6F, true)).setUnlocalizedName("chickenCooked").func_111206_d("chicken_cooked");
     public static Item rottenFlesh = (new ItemFood(111, 4, 0.1F, true)).setPotionEffect(Potion.hunger.id, 30, 0, 0.8F).setUnlocalizedName("rottenFlesh").func_111206_d("rotten_flesh");
     public static Item enderPearl = (new ItemEnderPearl(112)).setUnlocalizedName("enderPearl").func_111206_d("ender_pearl");
     public static Item blazeRod = (new Item(113)).setUnlocalizedName("blazeRod").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("blaze_rod");
