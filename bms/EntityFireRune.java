@@ -1,7 +1,10 @@
 package bms;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -16,6 +19,13 @@ public class EntityFireRune extends EntityRune {
 	public EntityFireRune(World par1World, EntityLivingBase par2EntityLivingBase)
     {
         super(par1World, par2EntityLivingBase);
+        effectStr = "fireRuneTrail";
+    }
+	
+	public EntityFireRune(World par1World, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase, float par4, float par5)
+    {
+        super(par1World);
+        setDirectionVariables(par2EntityLivingBase, par3EntityLivingBase, par4, par5);
         effectStr = "fireRuneTrail";
     }
 	
@@ -45,10 +55,5 @@ public class EntityFireRune extends EntityRune {
 	    		}
 			}
 		}
-    	//worldObj.getBlockId(par1, par2, par3)
-    	//worldObj.setBlock(par1, par2, par3, blockID, 0, 2)
-    	/*if(!entity.isBurning()){
-            entity.setFire(5);
-        }*/
     }
 }

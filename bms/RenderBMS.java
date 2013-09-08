@@ -12,6 +12,10 @@ public class RenderBMS {
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceRune.class, new RenderSnowball(ItemsBMS.blankItem));
 		RenderingRegistry.registerEntityRenderingHandler(EntityEarthRune.class, new RenderSnowball(ItemsBMS.blankItem));
 		RenderingRegistry.registerEntityRenderingHandler(EntityCitrineRune.class, new RenderSnowball(ItemsBMS.blankItem));
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageFire.class, new RenderSkeletonMage());
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageWater.class, new RenderSkeletonMage());
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageIce.class, new RenderSkeletonMage());
+		RenderingRegistry.registerEntityRenderingHandler(EntitySkeletonMageEarth.class, new RenderSkeletonMage());
 		
 		return true;
 	}
