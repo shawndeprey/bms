@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -20,6 +21,13 @@ public class EntityEarthRune extends EntityRune {
 	public EntityEarthRune(World par1World, EntityLivingBase par2EntityLivingBase)
     {
         super(par1World, par2EntityLivingBase);
+        effectStr = "earthRuneTrail";
+    }
+	
+	public EntityEarthRune(World par1World, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase, float par4, float par5)
+    {
+        super(par1World);
+        setDirectionVariables(par2EntityLivingBase, par3EntityLivingBase, par4, par5);
         effectStr = "earthRuneTrail";
     }
 	
