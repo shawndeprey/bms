@@ -88,6 +88,7 @@ public class ItemsBMS {
     public static ItemStack adamantiumChestStack;
     public static ItemStack adamantiumPantsStack;
     public static ItemStack adamantiumBootsStack;
+    public static ItemStack flaxFiberStack;
     public static ItemStack linenStack;
     public static ItemStack reinforcedLeatherStack;
     public static ItemStack lambchopStack;
@@ -248,6 +249,7 @@ public class ItemsBMS {
         adamantiumChestStack = 				new ItemStack(adamantiumChest);
         adamantiumPantsStack = 				new ItemStack(adamantiumPants);
         adamantiumBootsStack = 				new ItemStack(adamantiumBoots);
+        flaxFiberStack = 					new ItemStack(flaxFiber);
         linenStack = 						new ItemStack(linen);
         reinforcedLeatherStack = 			new ItemStack(reinforcedLeather);
         lambchopStack = 					new ItemStack(lambchop);

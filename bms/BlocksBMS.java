@@ -3,6 +3,7 @@ package bms;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,16 +37,18 @@ public class BlocksBMS {
 	public final static Block thinGlassGrey = 			new BlockStainedPane(2022, "stainedGlassGrey", "thinGlassGrey");
 	public final static Block thinGlassLightGrey = 		new BlockStainedPane(2023, "stainedGlassLightGrey", "thinGlassLightGrey");
 
-	// Ores
+	// Gems
 	public final static Block titaniumOre =				new BlockBMSOre(2025, 2025, Material.rock, "titaniumOre");
 	public final static Block adamantiumOre =			new BlockBMSOre(2026, 2026, Material.rock, "adamantiumOre");
 	public final static Block rubyOre =					new BlockBMSOre(2027, 9002, Material.rock, "rubyOre");
 	public final static Block sapphireOre =				new BlockBMSOre(2028, 9003, Material.rock, "sapphireOre");
 	public final static Block citrineOre =				new BlockBMSOre(2029, 9004, Material.rock, "citrineOre");
 	public final static Block jadeiteOre =				new BlockBMSOre(2030, 9005, Material.rock, "jadeiteOre");
-	
+	// Ores
 	public final static Block titaniumBlock =			new BlockOreStorage(2031).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("bms:titaniumBlock").func_111022_d("bms:titaniumBlock");
 	public final static Block adamantiumBlock =			new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("adamantiumBlock").func_111022_d("bms:adamantiumBlock");
+	// Plants
+	public final static Block flax =					new BlockFlax(2033).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("flax").func_111022_d("bms:flax");
 	
 	public static boolean registerBlocks()
 	{
@@ -124,6 +127,10 @@ public class BlocksBMS {
     	GameRegistry.registerBlock(jadeiteOre, "jadeiteOre");
         	LanguageRegistry.addName(jadeiteOre, "Jadeite Ore");
         	MinecraftForge.setBlockHarvestLevel(jadeiteOre, "pickaxe", 3); // 3 = diamond
+        
+        // Plants
+        GameRegistry.registerBlock(flax, "flax");
+        	LanguageRegistry.addName(flax, "Flax");
         	
 		return true;
 	}
