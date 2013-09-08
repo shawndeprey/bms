@@ -1,10 +1,8 @@
 package net.minecraft.entity.passive;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import java.util.ArrayList;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingData;
@@ -18,7 +16,6 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
@@ -27,8 +24,10 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-
 import net.minecraftforge.common.IShearable;
+import bms.ItemsBMS;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntitySheep extends EntityAnimal implements IShearable
 {
@@ -116,6 +115,14 @@ public class EntitySheep extends EntityAnimal implements IShearable
         if (!this.getSheared())
         {
             this.entityDropItem(new ItemStack(Block.cloth.blockID, 1, this.getFleeceColor()), 0.0F);
+        }
+        int j = this.rand.nextInt(3) + 1 + this.rand.nextInt(1 + par2);
+        for (int k = 0; k < j; ++k){
+            if (this.isBurning()){
+                this.dropItem(ItemsBMS.cookedLambchop.itemID, 1);
+            } else {
+                this.dropItem(ItemsBMS.lambchop.itemID, 1);
+            }
         }
     }
 
