@@ -3,6 +3,7 @@ package bms;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -55,6 +56,8 @@ public class BlocksBMS {
 	public final static Block campfireUnlit =			new BlockCampfire(2037).setHardness(0F).setResistance(0F).setUnlocalizedName("bms:campfireUnlit").func_111022_d("bms:CampfireOff");
 	public final static Block campfireLit =				new BlockCampfireLit(2038).setHardness(0F).setResistance(0F).setUnlocalizedName("bms:campfireLit").func_111022_d("bms:CampfireOn").setLightValue(1f);
 	
+	// Block Stacks
+	public static ItemStack campfireUnlitStack = new ItemStack(campfireUnlit);
 	
 	public static boolean registerBlocks()
 	{

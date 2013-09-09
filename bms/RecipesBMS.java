@@ -1,6 +1,8 @@
 package bms;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipesBMS {
@@ -28,6 +30,12 @@ public class RecipesBMS {
         GameRegistry.addRecipe(ItemsBMS.adamantiumHoeStack, "xx ", " y ", " y ", 'x',ItemsBMS.adamantiumIngotStack, 'y',Item.stick);
         GameRegistry.addRecipe(ItemsBMS.titaniumSwordStack, "x", "x", "y", 'x',ItemsBMS.titaniumIngotStack, 'y',Item.stick);
         GameRegistry.addRecipe(ItemsBMS.adamantiumSwordStack, "x", "x", "y", 'x',ItemsBMS.adamantiumIngotStack, 'y',Item.stick);
+        
+        // Campcraft
+        GameRegistry.addRecipe(BlocksBMS.campfireUnlitStack, " x ", " y ", "yzy",'x', new ItemStack(Block.wood), 'y', Item.stick, 'z', Item.paper);
+        GameRegistry.addRecipe(BlocksBMS.campfireUnlitStack, " x ", " y ", "yzy",'x', new ItemStack(Block.wood, 1, 1), 'y', Item.stick, 'z', Item.paper);
+        GameRegistry.addRecipe(BlocksBMS.campfireUnlitStack, " x ", " y ", "yzy",'x', new ItemStack(Block.wood, 1, 2), 'y', Item.stick, 'z', Item.paper);
+        GameRegistry.addRecipe(BlocksBMS.campfireUnlitStack, " x ", " y ", "yzy",'x', new ItemStack(Block.wood, 1, 3), 'y', Item.stick, 'z', Item.paper);
         
 		return true;
     }
