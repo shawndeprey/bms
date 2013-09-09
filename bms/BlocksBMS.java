@@ -48,10 +48,13 @@ public class BlocksBMS {
 	public final static Block titaniumBlock =			new BlockOreStorage(2031).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("bms:titaniumBlock").func_111022_d("bms:titaniumBlock");
 	public final static Block adamantiumBlock =			new BlockOreStorage(2032).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("adamantiumBlock").func_111022_d("bms:adamantiumBlock");
 	
-	// Tent Blocks
-	public final static Block tentBlock =				new BlockTent(2033, Material.cloth, "tentBlock");
-	public final static Block tentClothBlock =			new BlockTentCloth(2034, Material.cloth, "tentClothBlock");
-	public final static Block tentBlockDoor =			new BlockTentDoor(2035, Material.cloth, "tentDoor");
+	// Campcraft
+	public final static Block tentBlock =				new BlockTent(2034, Material.cloth, "tentBlock");
+	public final static Block tentClothBlock =			new BlockTentCloth(2035, Material.cloth, "tentClothBlock");
+	public final static Block tentBlockDoor =			new BlockTentDoor(2036, Material.cloth, "tentDoor");
+	public final static Block campfireUnlit =			new BlockCampfire(2037).setHardness(0F).setResistance(0F).setUnlocalizedName("bms:campfireUnlit").func_111022_d("bms:CampfireOff");
+	public final static Block campfireLit =				new BlockCampfireLit(2038).setHardness(0F).setResistance(0F).setUnlocalizedName("bms:campfireLit").func_111022_d("bms:CampfireOn").setLightValue(1f);
+	
 	
 	public static boolean registerBlocks()
 	{
@@ -138,6 +141,12 @@ public class BlocksBMS {
     		LanguageRegistry.addName(tentClothBlock, "Tent Cloth");
 		GameRegistry.registerBlock(tentBlockDoor, "tentBlockDoor");
     		LanguageRegistry.addName(tentBlockDoor, "Tent Door");
+    		
+    	GameRegistry.registerBlock(campfireUnlit, "campfireUnlit");
+    		LanguageRegistry.addName(campfireUnlit, "Unlit Campfire");
+    	GameRegistry.registerBlock(campfireLit, "campfireLit");
+    		LanguageRegistry.addName(campfireLit, "Campfire");
+    		
         	
 		return true;
 	}
