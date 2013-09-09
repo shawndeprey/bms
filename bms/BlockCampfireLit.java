@@ -3,7 +3,9 @@ package bms;
 import java.util.Random;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -41,10 +43,12 @@ public class BlockCampfireLit extends BlockCampfire {
 	        }
         }
         
-        if(Math.random() < 0.01f + (meta / 1000)){
+        if(Math.random() < 0.9f + (meta / 1000)){
         	meta++;
         	if(meta > 15){
-        		//this.dropItem(mageRuneDropID, 6 + (int)(Math.random() * 14));
+        		EntityItem entityitem = new EntityItem(world, par2 + 0.5, par3 + 0.5, par4 + 0.5, new ItemStack(Item.coal, (int)(1 + Math.random() * 5), 1));
+        		entityitem.delayBeforeCanPickup = 10;
+        		world.spawnEntityInWorld(entityitem);
         		world.setBlockToAir(par2, par3, par4);
         	} else {
         		world.setBlockMetadataWithNotify(par2, par3, par4, meta, 2);
