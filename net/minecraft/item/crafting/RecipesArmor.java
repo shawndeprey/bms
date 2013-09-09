@@ -11,7 +11,8 @@ public class RecipesArmor
 
     public RecipesArmor()
     {
-        this.recipeItems = new Object[][] {{Item.leather, Block.fire, Item.ingotIron, Item.diamond, Item.ingotGold}, {Item.helmetLeather, Item.helmetChain, Item.helmetIron, Item.helmetDiamond, Item.helmetGold}, {Item.plateLeather, Item.plateChain, Item.plateIron, Item.plateDiamond, Item.plateGold}, {Item.legsLeather, Item.legsChain, Item.legsIron, Item.legsDiamond, Item.legsGold}, {Item.bootsLeather, Item.bootsChain, Item.bootsIron, Item.bootsDiamond, Item.bootsGold}};
+        //this.recipeItems = new Object[][] {{Item.leather, Block.fire, Item.ingotIron, Item.diamond, Item.ingotGold}, {Item.helmetLeather, Item.helmetChain, Item.helmetIron, Item.helmetDiamond, Item.helmetGold}, {Item.plateLeather, Item.plateChain, Item.plateIron, Item.plateDiamond, Item.plateGold}, {Item.legsLeather, Item.legsChain, Item.legsIron, Item.legsDiamond, Item.legsGold}, {Item.bootsLeather, Item.bootsChain, Item.bootsIron, Item.bootsDiamond, Item.bootsGold}};
+    	this.recipeItems = new Object[][] {{Item.leather, Block.fire, Item.ingotIron, Item.ingotGold}, {Item.helmetLeather, Item.helmetChain, Item.helmetIron, Item.helmetGold}, {Item.plateLeather, Item.plateChain, Item.plateIron, Item.plateGold}, {Item.legsLeather, Item.legsChain, Item.legsIron, Item.legsGold}, {Item.bootsLeather, Item.bootsChain, Item.bootsIron, Item.bootsGold}};
     }
 
     /**

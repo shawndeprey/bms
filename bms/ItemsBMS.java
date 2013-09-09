@@ -4,6 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
@@ -87,8 +88,11 @@ public class ItemsBMS {
     public static ItemStack adamantiumChestStack;
     public static ItemStack adamantiumPantsStack;
     public static ItemStack adamantiumBootsStack;
+    public static ItemStack flaxFiberStack;
     public static ItemStack linenStack;
     public static ItemStack reinforcedLeatherStack;
+    public static ItemStack lambchopStack;
+    public static ItemStack cookedLambchopStack;
     
     // Magic
 	public static Item fireStaff;
@@ -124,6 +128,10 @@ public class ItemsBMS {
 	public static Item linen;
 	public static Item reinforcedLeather;
 	public static Item flaxFiber;
+	
+	// Food
+	public static Item lambchop;
+	public static Item cookedLambchop;
     
     public static boolean initItems()
     {
@@ -193,6 +201,9 @@ public class ItemsBMS {
     	reinforcedLeather =	new Item(9051).setUnlocalizedName("reinforcedLeather").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:reinforcedLeather");
     	flaxFiber = new Item(9052).setUnlocalizedName("flaxFiber").setCreativeTab(CreativeTabs.tabMaterials).func_111206_d("bms:flaxFiber");
     	
+    	lambchop = (new ItemFood(9053, 3, 0.3F, true)).setUnlocalizedName("lambchop").func_111206_d("bms:lambchop").setCreativeTab(CreativeTabs.tabFood);
+    	cookedLambchop = (new ItemFood(9054, 9, 0.8F, true)).setUnlocalizedName("cookedLambchop").func_111206_d("bms:cookedLambchop").setCreativeTab(CreativeTabs.tabFood);
+    	
     	return true;
     }
     
@@ -238,8 +249,11 @@ public class ItemsBMS {
         adamantiumChestStack = 				new ItemStack(adamantiumChest);
         adamantiumPantsStack = 				new ItemStack(adamantiumPants);
         adamantiumBootsStack = 				new ItemStack(adamantiumBoots);
+        flaxFiberStack = 					new ItemStack(flaxFiber);
         linenStack = 						new ItemStack(linen);
         reinforcedLeatherStack = 			new ItemStack(reinforcedLeather);
+        lambchopStack = 					new ItemStack(lambchop);
+        cookedLambchopStack = 				new ItemStack(cookedLambchop);
         return true;
 	}
 	
@@ -360,6 +374,11 @@ public class ItemsBMS {
     		LanguageRegistry.addName(reinforcedLeather, "Reinforced Leather");
     	GameRegistry.registerItem(flaxFiber, "flaxFiber");
     		LanguageRegistry.addName(flaxFiber, "Flax Fibers");
+    		
+    	GameRegistry.registerItem(lambchop, "lambchop");
+    		LanguageRegistry.addName(lambchop, "Raw Lambchop");
+    	GameRegistry.registerItem(cookedLambchop, "cookedLambchop");
+    		LanguageRegistry.addName(cookedLambchop, "Cooked Lambchop");
     		
 	    	
     	return true;

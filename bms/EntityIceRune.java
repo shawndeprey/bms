@@ -29,21 +29,23 @@ public class EntityIceRune extends EntityRune {
 	
 	public void performRuneEffect(MovingObjectPosition mop)
     {
-    	for(int x = (int)this.posX - 5; x < (int)this.posX + 5; x++){
-    		for(int y = (int)this.posY - 5; y < (int)this.posY + 5; y++){
-    			for(int z = (int)this.posZ - 5; z < (int)this.posZ + 5; z++){
-    				
-    				int j1 = worldObj.getBlockId(x, y, z);
-    				int j2 = worldObj.getBlockId(x, y - 1, z);
-    				if(j1 == Block.waterStill.blockID || j1 == Block.waterMoving.blockID){
-    					worldObj.setBlock(x, y, z, Block.ice.blockID, 0, 2);
-    				} else
-    				if(j1 == 0 && j2 != 0 && j2 != Block.snow.blockID && j2 != Block.ice.blockID && Block.isNormalCube(j2)){
-    					worldObj.setBlock(x, y, z, Block.snow.blockID, 0, 2);
-    				}
-    				
-    			}
-    		}
-    	}
+		if (!this.worldObj.isRemote) {
+			for(int x = (int)this.posX - 5; x < (int)this.posX + 5; x++){
+	    		for(int y = (int)this.posY - 5; y < (int)this.posY + 5; y++){
+	    			for(int z = (int)this.posZ - 5; z < (int)this.posZ + 5; z++){
+	    				
+	    				int j1 = worldObj.getBlockId(x, y, z);
+	    				int j2 = worldObj.getBlockId(x, y - 1, z);
+	    				if(j1 == Block.waterStill.blockID || j1 == Block.waterMoving.blockID){
+	    					worldObj.setBlock(x, y, z, Block.ice.blockID, 0, 2);
+	    				} else
+	    				if(j1 == 0 && j2 != 0 && j2 != Block.snow.blockID && j2 != Block.ice.blockID && Block.isNormalCube(j2)){
+	    					worldObj.setBlock(x, y, z, Block.snow.blockID, 0, 2);
+	    				}
+	    				
+	    			}
+	    		}
+	    	}
+		}
     }
 }

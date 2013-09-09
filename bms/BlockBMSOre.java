@@ -25,4 +25,20 @@ public class BlockBMSOre extends Block {
 	public int idDropped(int metadata, Random random, int fortune){
 		return ID;
 	}
+	
+	public int quantityDroppedWithBonus(int par1, Random par2Random)
+    {
+        if (par1 > 0 && this.blockID != this.idDropped(0, par2Random, par1)){
+            int j = par2Random.nextInt(par1 + 2) - 1;
+            j = j < 0 ? 0 : j;
+            return this.quantityDropped(par2Random) * (j + 1);
+        } else {
+            return this.quantityDropped(par2Random);
+        }
+    }
+	
+	public int quantityDropped(Random par1Random)
+    {
+        return 1;
+    }
 }
