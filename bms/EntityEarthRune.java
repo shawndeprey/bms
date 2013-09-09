@@ -33,60 +33,61 @@ public class EntityEarthRune extends EntityRune {
 	
 	public void performRuneEffect(MovingObjectPosition mop)
     {
-		for(int x = (int)this.posX - 5; x < (int)this.posX + 5; x++){
-    		for(int y = (int)this.posY - 5; y < (int)this.posY + 5; y++){
-    			for(int z = (int)this.posZ - 5; z < (int)this.posZ + 5; z++){
-    				if(worldObj.getBlockId(x, y, z) == Block.cobblestone.blockID){
-    					worldObj.setBlock(x, y, z, Block.cobblestoneMossy.blockID, 0, 2);
-    				}
-    				if(worldObj.getBlockId(x, y, z) == Block.stoneBrick.blockID){
-    					worldObj.setBlock(x, y, z, Block.stoneBrick.blockID, 1, 2);
-    				}
-    				if(worldObj.getBlockId(x, y, z) == Block.cobblestoneWall.blockID){
-    					worldObj.setBlock(x, y, z, Block.cobblestoneWall.blockID, 1, 2);
-    				}
-    				if(worldObj.getBlockId(x, y, z) == Block.dirt.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
-    					worldObj.setBlock(x, y, z, Block.grass.blockID, 0, 2);
-    				}
-    				if(worldObj.getBlockId(x, y, z) == Block.grass.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
-    					if(1 + (int)(Math.random() * 100) > 90){
-    						switch( 1 + (int)(Math.random() * 6)){
-	    						case 1:{
-									worldObj.setBlock(x, y + 1, z, Block.plantRed.blockID, 0, 2);
-									break;
-								}
-	    						case 2:{
-									worldObj.setBlock(x, y + 1, z, Block.plantYellow.blockID, 0, 2);
-									break;
-								}
-	    						case 3:
-	    						case 4:
-	    						case 5:
-	    						case 6:
-	    						case 7:{
-	    							worldObj.setBlock(x, y + 1, z, Block.tallGrass.blockID, 1, 2);
-									break;
+		if (!this.worldObj.isRemote) {
+			for(int x = (int)this.posX - 5; x < (int)this.posX + 5; x++){
+	    		for(int y = (int)this.posY - 5; y < (int)this.posY + 5; y++){
+	    			for(int z = (int)this.posZ - 5; z < (int)this.posZ + 5; z++){
+	    				if(worldObj.getBlockId(x, y, z) == Block.cobblestone.blockID){
+	    					worldObj.setBlock(x, y, z, Block.cobblestoneMossy.blockID, 0, 2);
+	    				}
+	    				if(worldObj.getBlockId(x, y, z) == Block.stoneBrick.blockID){
+	    					worldObj.setBlock(x, y, z, Block.stoneBrick.blockID, 1, 2);
+	    				}
+	    				if(worldObj.getBlockId(x, y, z) == Block.cobblestoneWall.blockID){
+	    					worldObj.setBlock(x, y, z, Block.cobblestoneWall.blockID, 1, 2);
+	    				}
+	    				if(worldObj.getBlockId(x, y, z) == Block.dirt.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
+	    					worldObj.setBlock(x, y, z, Block.grass.blockID, 0, 2);
+	    				}
+	    				if(worldObj.getBlockId(x, y, z) == Block.grass.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
+	    					if(1 + (int)(Math.random() * 100) > 90){
+	    						switch( 1 + (int)(Math.random() * 6)){
+		    						case 1:{
+										worldObj.setBlock(x, y + 1, z, Block.plantRed.blockID, 0, 2);
+										break;
+									}
+		    						case 2:{
+										worldObj.setBlock(x, y + 1, z, Block.plantYellow.blockID, 0, 2);
+										break;
+									}
+		    						case 3:
+		    						case 4:
+		    						case 5:
+		    						case 6:
+		    						case 7:{
+		    							worldObj.setBlock(x, y + 1, z, Block.tallGrass.blockID, 1, 2);
+										break;
+		    						}
 	    						}
-    						}
-    					}
-    				} else
-    				if(worldObj.getBlockId(x, y, z) == Block.sand.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
-    					if(1 + (int)(Math.random() * 100) > 98){
-    						switch(1 + (int)(Math.random() * 2)){
-	    						case 1:{
-									worldObj.setBlock(x, y + 1, z, Block.cactus.blockID, 0, 2);
-									break;
-								}
-	    						case 2:{
-									worldObj.setBlock(x, y + 1, z, Block.tallGrass.blockID, 0, 2);
-									break;
-								}
-    						}
-    					}
-    				}
-    				
-    			}
-    		}
-    	}
+	    					}
+	    				} else
+	    				if(worldObj.getBlockId(x, y, z) == Block.sand.blockID && worldObj.getBlockId(x, y + 1, z) == 0){
+	    					if(1 + (int)(Math.random() * 100) > 90){
+	    						switch(1 + (int)(Math.random() * 2)){
+		    						case 1:{
+										worldObj.setBlock(x, y + 1, z, Block.cactus.blockID, 0, 2);
+										break;
+									}
+		    						case 2:{
+										worldObj.setBlock(x, y + 1, z, Block.tallGrass.blockID, 0, 2);
+										break;
+									}
+	    						}
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+		}
     }
 }

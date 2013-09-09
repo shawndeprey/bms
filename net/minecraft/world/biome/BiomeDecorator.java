@@ -456,8 +456,8 @@ public class BiomeDecorator
         this.genStandardOre1(8, this.redstoneGen, 0, 16);
         if (TerrainGen.generateOre(currentWorld, randomGenerator, diamondGen, chunk_X, chunk_Z, DIAMOND))
         this.genStandardOre1(1, this.diamondGen, 0, 16);
-        if (TerrainGen.generateOre(currentWorld, randomGenerator, lapisGen, chunk_X, chunk_Z, LAPIS))
-        this.genStandardOre2(1, this.lapisGen, 16, 16);
+        //if (TerrainGen.generateOre(currentWorld, randomGenerator, lapisGen, chunk_X, chunk_Z, LAPIS))
+        //this.genStandardOre2(1, this.lapisGen, 16, 16);
         MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Post(currentWorld, randomGenerator, chunk_X, chunk_Z));
     }
 }

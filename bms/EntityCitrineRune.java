@@ -28,6 +28,8 @@ public class EntityCitrineRune extends EntityRune {
 	
 	public void performRuneEffect(MovingObjectPosition mop)
     {
-        this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 4.0F, true);
+		if (!this.worldObj.isRemote) {
+			this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 4.0F, true);
+		}
     }
 }
