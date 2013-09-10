@@ -513,7 +513,7 @@ public class BlockTent extends Block {
 									if(c == 4)
 										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									if(c == 0)
-										world.setBlock(k, j, i, BlocksBMS.tentBlockDoor.blockID, 9, 2);
+										world.setBlock(k, j, i, BlocksBMS.tentBlockDoor.blockID, 8, 2);
 									if(a != 3)
 										if(c == 0)
 											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
@@ -699,7 +699,7 @@ public class BlockTent extends Block {
 									if(c == 0)
 										world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);
 									if(c == 4)
-										world.setBlock(k, j, i, BlocksBMS.tentBlockDoor.blockID, 9, 2);
+										world.setBlock(k, j, i, BlocksBMS.tentBlockDoor.blockID, 8, 2);
 									if(a != 3)
 										if(c == 4)
 											world.setBlock(k, j, i, BlocksBMS.tentClothBlock.blockID, (direction * 4) + 3, 2);

@@ -31,9 +31,6 @@ public class BlockTentDoor extends BlockDoor{
         setStepSound(soundClothFootstep);
         setUnlocalizedName(name);
         texName = name;
-        
-        // Add Solid Block Texture
-        //func_111022_d(BasicInfo.ID.toLowerCase() + ":" + name);
 	}
 
 	public int getRenderType()
@@ -57,6 +54,11 @@ public class BlockTentDoor extends BlockDoor{
         this.tex_lower = par1IconRegister.registerIcon(BasicInfo.ID.toLowerCase() + ":" + texName + "_lower");
     }
 
+    public Icon getIcon(int par1, int par2)
+    {
+        return this.tex_upper;
+    }
+    
     public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
             return par5 == 0 ? tex_lower : tex_upper;

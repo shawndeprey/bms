@@ -34,7 +34,8 @@ public class BlockTentCloth extends Block {
 	{
 		// Return true or false if block is next to this one, and if it is a tent block, or a tent cloth block
 		if(par1IBlockAccess.getBlockId(par2 + dir.offsetX, par3 + dir.offsetY, par4 + dir.offsetZ) == BlocksBMS.tentClothBlock.blockID ||
-		   par1IBlockAccess.getBlockId(par2 + dir.offsetX, par3 + dir.offsetY, par4 + dir.offsetZ) == BlocksBMS.tentBlock.blockID)
+		   par1IBlockAccess.getBlockId(par2 + dir.offsetX, par3 + dir.offsetY, par4 + dir.offsetZ) == BlocksBMS.tentBlock.blockID ||
+		   par1IBlockAccess.getBlockId(par2 + dir.offsetX, par3 + dir.offsetY, par4 + dir.offsetZ) == BlocksBMS.tentBlockDoor.blockID)
 		{
 			return true;
 		}
